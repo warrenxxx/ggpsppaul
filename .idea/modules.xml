@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ProjectoMicap.iml" filepath="$PROJECT_DIR$/.idea/ProjectoMicap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/role_manage/role_manage.iml" filepath="$PROJECT_DIR$/role_manage/role_manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_manage/user_manage.iml" filepath="$PROJECT_DIR$/user_manage/user_manage.iml" />
+    </modules>
+  </component>
+</project>
