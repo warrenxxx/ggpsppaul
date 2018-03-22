@@ -3,6 +3,8 @@ package org.micap.login_manage.repository;
 import org.bson.types.ObjectId;
 import org.micap.common.entity.User;
 import org.micap.login_manage.dto.FunctionsDto;
+import org.micap.login_manage.dto.LoginDto;
+import org.micap.login_manage.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -54,5 +56,27 @@ public class LoginDaoMongoImp implements LoginDao {
             match(Criteria.where("account.userName").is(userName))
         ),"user",User.class);
         return null;
+    }
+
+    @Override
+    public Mono<UserDto> getUserDto(LoginDto loginDto) {
+        return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
+                match(Criteria.where("account.userName").is(loginDto.getUserName()).and("account.password").is(loginDto.getPassword())),
+                unwind("account.roles"),
+                lookup("role","account.roles","_id","roles"),
+                unwind("roles"),
+                group("_id")
+                        .first("firstName").as("firstName")
+                        .first("lastName").as("lastName")
+                        .first("birthDate").as("birthDate")
+                        .first("gender").as("gender")
+                        .first("account.email").as("email")
+                        .first("account.userName").as("userName")
+                        .first("functions").as("functions")
+                        .push("roles").as("roles")
+
+        ),"user",UserDto.class).publishNext();
+
+
     }
 }

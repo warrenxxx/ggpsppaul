@@ -15,6 +15,8 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Mono;
 
+import static org.micap.common.config.Jwt.toJwt;
+import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 /**
@@ -34,13 +36,38 @@ public class LoginService {
     LoginDaoMongoImp loginDaoImp;
 
     public Mono<ServerResponse> login(ServerRequest serverRequest){
+        UserDto userDto=loginDaoImp.getUserDto(serverRequest.bodyToMono(LoginDto.class).block()).block();
+
+        if(userDto==null)
+            return ok().body(Mono.just(new AppResponse(null,new AppError[]{
+                    new AppError().setErrorMessage("username or password failed").setErrorCode("400")
+            })),AppResponse.class);
+        else
+            return ok().body(
+                    Mono.just(
+                        new AppResponse(userDto.setToken(toJwt(userDto.get_id(),loginDaoImp.getFunctions(userDto.get_id()).block())),null)
+                    ),
+                    AppResponse.class);
+  /*
         return serverRequest.bodyToMono(LoginDto.class).flatMap(
-                e->(e.getUserName().length()>10 && e.getPassword().length()>10)?
-                        ok().build():
-                        ServerResponse.status(200)
-                                .body(
-                                        new AppResponse(AppResponse.error(new AppError())),AppResponse.class
-                                );
+                e->loginDaoImp.getUserDto(e.getUserName(),e.getPassword())
+                        .defaultIfEmpty(new UserDto())
+                        .flatMap(
+                            userDto->
+                                    ok().body(Mono.just(userDto.get_id()!=null?
+                                    new AppResponse(
+                                            userDto
+//                                                    .setToken(loginDaoImp.getFunctions(userDto.get_id()).block())
+                                            ,
+                                            null):
+                                    new AppResponse(null,
+                                            new AppError[]{
+                                                new AppError().setErrorCode("400").setErrorMessage("no es encontro este usuario")
+                                            }
+                                    )
+                            ),AppResponse.class)
+                        )
         );//        return ServerResponse.status(200).body(Mono.just(""),String.class);
+*/
     }
 }
