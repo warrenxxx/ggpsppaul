@@ -24,6 +24,7 @@
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/user_manage/pom.xml" />
         <option value="$PROJECT_DIR$/role_manage/pom.xml" />
+        <option value="$PROJECT_DIR$/login_manage/pom.xml" />
       </list>
     </option>
   </component>

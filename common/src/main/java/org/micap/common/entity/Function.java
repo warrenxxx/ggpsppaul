@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode
 @Document
 public class Function {
-    public ObjectId _id;
+    public String _id;
     public String entity;
     public Methods crudMethods[];
 
@@ -23,7 +23,7 @@ public class Function {
      * @param _id the _id to set
      * @return Function
      */
-    public Function set_id(ObjectId _id) {
+    public Function set_id(String _id) {
         this._id = _id;
         return this;
     }

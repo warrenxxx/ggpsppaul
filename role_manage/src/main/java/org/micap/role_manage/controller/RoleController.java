@@ -2,6 +2,7 @@ package org.micap.role_manage.controller;
 
 import org.micap.role_manage.service.RoleService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
@@ -18,6 +19,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
  * @Author :warren
  * @since :18/03/2018
  */
+@Controller
 public class RoleController {
     private static final String ROLE="/role";
 
@@ -30,8 +32,9 @@ public class RoleController {
                         GET("/{id}")    , Req -> roleService.getRole(Req)
                 ).filter((req,next)->{
 
-                    return next.handle(req);
+                    return next.handle(req).doOnError(e->{
 
+                    });
                 })
         ).andNest(path(ROLE),
                 route(

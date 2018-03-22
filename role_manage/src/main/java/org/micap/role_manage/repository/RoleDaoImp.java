@@ -49,10 +49,4 @@ public class RoleDaoImp {
         return roleDao.deleteById(id);
     }
 
-    public Flux<Role> getRoleByName(String name){
-        return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                Aggregation.match(Criteria.where("name").is(name))
-        ),"role",Role.class).map(e->e.setIdToString());
-    }
-
 }

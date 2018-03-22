@@ -36,22 +36,20 @@ public class RoleService {
     }
     public Mono<ServerResponse> createRole(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Role.class).flatMap(
-                e->roleDaoImp
-                        .getRoleByName  (e.getName())
-                        .count().block()==0?
-                        roleDaoImp.roleDao.insert(e.set_id(new ObjectId())).flatMap(x->ok().build()):
-                        notFound().build()
+                role->roleDaoImp.roleDao.existsById(role.get_id())
+                    .flatMap(
+                            existe->existe==true?notFound().build(): ok().body(roleDaoImp.CreateRole(role),Role.class)
+                    )
         );
     }
 
     public Mono<ServerResponse> modifyRole(ServerRequest serverRequest){
-        return  roleDaoImp.roleDao.save(
-                serverRequest.bodyToMono(Role.class)
-                        .block()
-                        .set_id(new ObjectId())
-                )
-                .flatMap(role->ok().build())
-                .switchIfEmpty(notFound().build());
+        return serverRequest.bodyToMono(Role.class).flatMap(
+                role->roleDaoImp.roleDao.existsById(role.get_id())
+                        .flatMap(
+                                existe->existe==true?notFound().build(): ok().body(roleDaoImp.roleDao.save(role),Role.class)
+                        )
+        );
     }
     public Mono<ServerResponse> removerole(ServerRequest serverRequest){
         return roleDaoImp.roleDao.findById(serverRequest.pathVariable("id"))

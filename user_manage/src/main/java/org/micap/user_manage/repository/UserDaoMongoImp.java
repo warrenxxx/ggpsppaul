@@ -27,14 +27,16 @@ import static org.springframework.data.mongodb.core.aggregation.Aggregation.unwi
  * @since :18/03/2018
  */
 @Service
-public class UserDaoImp {
+public class UserDaoMongoImp implements UserDao {
+
 
     @Autowired
-    public UserDao userDao;
-
+    public UserDaoMongo userDaoMongo;
 
     @Autowired
     public ReactiveMongoOperations reactiveMongoOperations;
+
+
 
     public Flux<UserDto> getUsers(){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
@@ -54,9 +56,9 @@ public class UserDaoImp {
                 match(Criteria.where("userName").is(userName).and("email").is(email))
         ),"user",AccountDto.class);
     }
-    public Mono<User> getUser(String username, String password){
 
-        this.userDao.findOne(Example.of(new User().setAccount(new Account().setUserName(username))))
+    public Mono<User> getUser(String username, String password){
+        this.userDaoMongo.findOne(Example.of(new User().setAccount(new Account().setUserName(username))))
                 .filter(
                         user->true
                         //passwordEncoder.encode(password)==password
@@ -80,4 +82,36 @@ public class UserDaoImp {
                 replaceRoot("items")
         ),"user",Function.class);
     }
+
+    @Override
+    public Mono<UserDto> createUser(User user) {
+        return this.userDaoMongo.insert(user)
+                .map(e->new UserDto(
+                        e.get_id(),
+                        e.getFirstName(),
+                        e.getLastName(),
+                        e.getBirthDate(),
+                        e.getGender(),
+                        new AccountDto().setEmail(e.getAccount().getEmail())
+                                        .setUserName(e.getAccount().getUserName())
+                ));
+    }
+
+    @Override
+    public Mono<UserDto> updateUser(User user) {
+        return null;
+    }
+
+
+    @Override
+    public Mono<Void> deleteUser(User user) {
+        return null;
+    }
+
+    @Override
+    public Mono<Void> deleteUser(String id) {
+        return null;
+    }
+
+
 }

@@ -12,8 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode
 @Document
 public class Role {
-    public Object _id;
-    public String name;
+    public String _id;
     public String descripcion;
     public Function functions[];
 
@@ -23,19 +22,8 @@ public class Role {
      * @param _id the _id to set
      * @return Role
      */
-    public Role set_id(Object _id) {
+    public Role set_id(String _id) {
         this._id = _id;
-        return this;
-    }
-
-    /**
-     * Sets the name.
-     *
-     * @param name the name to set
-     * @return Role
-     */
-    public Role setName(String name) {
-        this.name = name;
         return this;
     }
 

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * The Audit class is implemment to
@@ -22,33 +22,30 @@ import java.util.Date;
 @Document
 public class Audit {
 
-    private Date createdDate;
-    private Date modifiedDate;
+    private LocalDate createdLocalDate;
+    private LocalDate modifiedLocalDate;
     private Object modifiedBy;
     private Object createdBy;
 
-
-
-
     /**
-     * Sets the createdDate.
+     * Sets the createdLocalDate.
      *
-     * @param createdDate the createdDate to set
+     * @param createdLocalDate the createdLocalDate to set
      * @return Audit
      */
-    public Audit setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public Audit setCreatedLocalDate(LocalDate createdLocalDate) {
+        this.createdLocalDate = createdLocalDate;
         return this;
     }
 
     /**
-     * Sets the modifiedDate.
+     * Sets the modifiedLocalDate.
      *
-     * @param modifiedDate the modifiedDate to set
+     * @param modifiedLocalDate the modifiedLocalDate to set
      * @return Audit
      */
-    public Audit setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
+    public Audit setModifiedLocalDate(LocalDate modifiedLocalDate) {
+        this.modifiedLocalDate = modifiedLocalDate;
         return this;
     }
 
@@ -75,8 +72,8 @@ public class Audit {
     }
 
     public Audit(Object IdUser){
-        this.createdDate=new Date();
-        this.modifiedDate=new Date();
+        this.createdLocalDate=LocalDate.now();
+        this.modifiedLocalDate=LocalDate.now();
         this.modifiedBy=IdUser;
         this.createdBy=IdUser;
     }

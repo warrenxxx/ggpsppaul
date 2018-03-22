@@ -32,9 +32,27 @@ public class UserController {
                 ).andRoute(
                         GET("/{id}")    , Req -> userService.getUser(Req)
                 ).filter((req,next)->{
-                    return next.handle(req);
+                        return next.handle(req);
                 })
+        ).andNest(path(RUTE),
+                route(
+                        PUT("/")        , Req -> userService.modifyUser(Req)
+                ).andRoute(
+                        DELETE("/{id}") , Req -> userService.removeUser(Req)
+                )
+        ).andNest(path(RUTE),
+                route(
+                        POST("/")       , Req -> userService.createUser(Req)
+                )
         );
+    }
+    public class CustomException extends RuntimeException {
+
+        private static final long serialVersionUID = -5970845585469454688L;
+
+        public CustomException(String type) {
+            System.out.println(type + ": throw CustomException!");
+        }
     }
 
 }

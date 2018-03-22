@@ -4,6 +4,7 @@ import lombok.*;
 import org.micap.common.enums.Sexo;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -19,12 +20,11 @@ import java.util.Date;
 @ToString
 @Document
 public class User {
-    private Object _id;
+    private String _id;
     private String firstName;
     private String lastName;
-    private Date birthDate;
+    private LocalDate birthDate;
     private Sexo gender;
-
     private Account account;
     private Audit audit;
 
@@ -34,7 +34,7 @@ public class User {
      * @param _id the _id to set
      * @return User
      */
-    public User set_id(Object _id) {
+    public User set_id(String _id) {
         this._id = _id;
         return this;
     }
@@ -67,7 +67,7 @@ public class User {
      * @param birthDate the birthDate to set
      * @return User
      */
-    public User setBirthDate(Date birthDate) {
+    public User setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
         return this;
     }

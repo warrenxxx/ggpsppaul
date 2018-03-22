@@ -25,7 +25,7 @@ public class Account {
     private String email;
     private String password;
     private String userName;
-    private ObjectId roles[];
+    private String roles[];
     private Function functions[];
 
     /**
@@ -67,7 +67,7 @@ public class Account {
      * @param roles the roles to set
      * @return Account
      */
-    public Account setRoles(ObjectId[] roles) {
+    public Account setRoles(String [] roles) {
         this.roles = roles;
         return this;
     }
