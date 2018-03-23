@@ -38,9 +38,6 @@ public class UserService {
     private UserDaoMongoImp userDaoImp;
 
     public Mono<ServerResponse> getUsers(ServerRequest serverRequest){
-        ArrayList l=new ArrayList();
-        for(int i=0;i<5;i++)
-            System.out.println( l.get(i));
         return
                 ok().body(
                         userDaoImp.getUsers()

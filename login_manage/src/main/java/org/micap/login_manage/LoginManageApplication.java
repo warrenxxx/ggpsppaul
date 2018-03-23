@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import static org.micap.common.config.Jwt.toJwt;
+import static org.micap.common.security.Jwt.toJwt;
 
 @SpringBootApplication
 public class LoginManageApplication {
@@ -16,12 +16,15 @@ public class LoginManageApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(LoginDaoMongoImp loginDaoImp){
 		return args -> {
-			UserDto userDto=loginDaoImp.getUserDto(new LoginDto("warrenxxxx","123456")).block();
-
+			UserDto userDto=loginDaoImp.getUserDto(new LoginDto("warrenxxx","123456")).block();
+			System.out.println(userDto==null);
+			System.out.println(userDto);
+			String gg=loginDaoImp.getFunctions(userDto.get_id()).block();
+			System.out.println(gg);
 			userDto.setToken(toJwt(userDto.get_id(),loginDaoImp.getFunctions(userDto.get_id()).block()));
-			System.out.println(
-					userDto
-			);
+//			System.out.println(
+//					userDto
+//			);
 		};
 	}
 	public static void main(String[] args) {

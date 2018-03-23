@@ -1,14 +1,24 @@
 package org.micap.login_manage.controller;
 
+import org.micap.common.ExceptionHandling.BaseException;
+import org.micap.common.ExceptionHandling.UserNotFoundException;
+import org.micap.common.config.AppError;
 import org.micap.login_manage.service.LoginService;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
+
+import java.util.function.BiFunction;
+import java.util.logging.Logger;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.nest;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 /**
  * Created by Warren Stehen Aroni Soto.
@@ -23,11 +33,17 @@ public class LoginController {
 
 
 
+
     @Bean
     RouterFunction<ServerResponse> Route(LoginService loginService) {
         return nest(path(RUTE),
                 route(
-                        POST("/")        , Req -> loginService.login(Req)
+                        POST("/")        , Req -> loginService.login(Req).onErrorResume(e-> Mono.error(e))
+                                        .onErrorResume( e->{
+                                            UserNotFoundException b= (UserNotFoundException) e;
+                                            System.out.println(b.getMessage());
+                                            return ok().body(Mono.just(b.appError), AppError.class);
+                                        })
                 )
         );
     }

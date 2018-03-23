@@ -1,4 +1,4 @@
-package org.micap.common.config;
+package org.micap.common.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -20,12 +20,11 @@ import java.util.Map;
  */
 public class Jwt {
 
-
     private static final String  Function="functions";
-
-
     public static String toJwt(String _id,String functions){
+        functions=functions==null?"":functions;
         try {
+            System.out.println(_id);
             return JWT.create()
                     .withIssuer("auth0")
                     .withHeader(Map.of(
@@ -43,17 +42,15 @@ public class Jwt {
     }
 
     public static Boolean verifyFunctions(String token,String function){
+        System.out.println("warren");
         try {
             DecodedJWT jwt = JWT.decode(token);
+            System.out.println(jwt.getHeaderClaim(Function).asString()+"-->>>"+function);
             return jwt.getHeaderClaim(Function).asString().indexOf(function)!=-1;
         } catch (JWTDecodeException exception){
+            System.out.println("no llego"+exception+" "+token);
             //Invalid token
             return false;
         }
-    }
-    public static void main(String argc[]){
-        String h1=toJwt("5ab167534779f8302c4c3971","USER-CREATE,USER-DELETE,USER-GET,USER-UPDATE,ROLE-CREATE,ROLE-DELETE,ROLE-GET,ROLE-UPDATE");
-        System.out.println(verifyFunctions(h1,"USER-CREATE"));
-        System.out.println(verifyFunctions(h1,"USER-MODIF"));
     }
 }

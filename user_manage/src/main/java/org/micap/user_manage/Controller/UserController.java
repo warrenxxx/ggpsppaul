@@ -6,6 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import java.util.List;
+
+import static org.micap.common.security.Jwt.verifyFunctions;
+import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.nest;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
@@ -22,7 +26,7 @@ public class UserController {
     private static final String RUTE="/user";
     private static final String ROLE="/role";
 
-
+    private static final String auth="USER";
 
     @Bean
     RouterFunction<ServerResponse> Route(UserService userService) {
@@ -32,7 +36,13 @@ public class UserController {
                 ).andRoute(
                         GET("/{id}")    , Req -> userService.getUser(Req)
                 ).filter((req,next)->{
-                        return next.handle(req);
+                    List<String>l=req.headers().header("Authorization");
+                    if(l.size()==1){
+                        if(verifyFunctions(l.get(0),auth+"-GET")==true){
+                            return next.handle(req);
+                        }
+                    }
+                    return ServerResponse.status(UNAUTHORIZED).build();
                 })
         ).andNest(path(RUTE),
                 route(
@@ -46,14 +56,5 @@ public class UserController {
                 )
         );
     }
-    public class CustomException extends RuntimeException {
-
-        private static final long serialVersionUID = -5970845585469454688L;
-
-        public CustomException(String type) {
-            System.out.println(type + ": throw CustomException!");
-        }
-    }
-
 }
 

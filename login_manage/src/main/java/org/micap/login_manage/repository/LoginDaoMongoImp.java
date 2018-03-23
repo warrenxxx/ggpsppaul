@@ -1,5 +1,6 @@
 package org.micap.login_manage.repository;
 
+import lombok.Data;
 import org.bson.types.ObjectId;
 import org.micap.common.entity.User;
 import org.micap.login_manage.dto.FunctionsDto;
@@ -8,6 +9,7 @@ import org.micap.login_manage.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -76,7 +78,5 @@ public class LoginDaoMongoImp implements LoginDao {
                         .push("roles").as("roles")
 
         ),"user",UserDto.class).publishNext();
-
-
     }
 }

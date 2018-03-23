@@ -1,22 +1,18 @@
 package org.micap.login_manage.service;
 
-import org.micap.common.config.AppError;
+import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
-import org.micap.common.entity.User;
 import org.micap.login_manage.dto.LoginDto;
 import org.micap.login_manage.dto.UserDto;
 import org.micap.login_manage.repository.LoginDaoMongoImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Mono;
 
-import static org.micap.common.config.Jwt.toJwt;
-import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
+import static org.micap.common.security.Jwt.toJwt;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 /**
@@ -36,12 +32,11 @@ public class LoginService {
     LoginDaoMongoImp loginDaoImp;
 
     public Mono<ServerResponse> login(ServerRequest serverRequest){
-        UserDto userDto=loginDaoImp.getUserDto(serverRequest.bodyToMono(LoginDto.class).block()).block();
+        LoginDto loginDto=serverRequest.bodyToMono(LoginDto.class).block();
+        UserDto userDto=loginDaoImp.getUserDto(loginDto).block();
 
         if(userDto==null)
-            return ok().body(Mono.just(new AppResponse(null,new AppError[]{
-                    new AppError().setErrorMessage("username or password failed").setErrorCode("400")
-            })),AppResponse.class);
+            return Mono.error(new UserNotFoundException(loginDto.getUserName(),""));
         else
             return ok().body(
                     Mono.just(

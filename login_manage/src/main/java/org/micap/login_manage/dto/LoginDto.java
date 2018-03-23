@@ -22,6 +22,4 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class LoginDto {
     private String userName;
     private String password;
-
-
 }

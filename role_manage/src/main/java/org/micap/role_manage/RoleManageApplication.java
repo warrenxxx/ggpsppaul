@@ -24,7 +24,7 @@ public class RoleManageApplication {
 	CommandLineRunner commandLineRunner(RoleDao roleDao){
 		return args -> {
 			roleDao.deleteAll().subscribe(null,null,()->{
-				Role r1=new Role("User","Role de usuario",new Function[]{});
+				Role r1=new Role("USER","Role de usuario",new Function[]{});
 				Role r2=new Role("ADMIN","Role of Admin to Admintrate all Page",new Function[]{
 						new Function(new ObjectId().toString(),"USER",new Methods[]{
 								Methods.CREATE,

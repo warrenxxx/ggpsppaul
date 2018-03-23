@@ -1,16 +1,25 @@
 package org.micap.common.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.async.SingleResultCallback;
+import com.mongodb.async.client.MongoClient;
+import com.mongodb.async.client.MongoClients;
+import com.mongodb.async.client.MongoCollection;
+import com.mongodb.async.client.MongoDatabase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.Document;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Arrays;
+import java.util.Map;
 
 /**
  * The response class is implemment to
@@ -23,46 +32,4 @@ import reactor.core.publisher.Mono;
 public class AppResponse {
     public Object data;
     public AppError errors[];
-
-
-
-    public static Mono<AppResponse> error(AppError appErrors[]){
-        return Mono.just(new AppResponse(null,appErrors));
-    }
-
-    public static Mono<AppResponse> accept(Object data){
-        return Mono.just(new AppResponse(data,null));
-    }
-
-    public static String showMsg(String msg) throws warrenException {
-        //Create message anyways and return it
-        throw new warrenException(new String[]{},"");
-
-    }
-
-
-
-    public static void  main(String args[]) throws UserNotFoundException{
-        throw new  UserNotFoundException("id","12331");
-    }
-}
-
-class base extends Exception{
-
-    public Object object;
-    public base() {
-        super();
-    }
-
-    public base(String name,String params[]){
-        super(aggtmreps(name,name));
-        this.object=null;
-    }
-    public base(String name,Object object,String params[]){
-        super(aggtmreps(name,name));
-        this.object=object;
-    }
-    public static String aggtmreps(String name,String otro){
-        return name+"_____"+otro;
-    }
 }

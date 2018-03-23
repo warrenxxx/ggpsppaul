@@ -1,6 +1,11 @@
 package org.micap.role_manage.controller;
 
 import org.micap.role_manage.service.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ResourceProperties;
+import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
+import org.springframework.boot.web.reactive.error.ErrorAttributes;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -24,7 +29,7 @@ public class RoleController {
     private static final String ROLE="/role";
 
     @Bean
-    RouterFunction<ServerResponse> Routes(RoleService roleService) {
+    protected RouterFunction<ServerResponse> getRoutingFunction(RoleService roleService) {
         return nest(path(ROLE),
                 route(
                         GET("/")        , Req -> roleService.getRoles(Req)
