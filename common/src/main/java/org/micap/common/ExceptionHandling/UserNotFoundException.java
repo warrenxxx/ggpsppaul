@@ -23,13 +23,4 @@ public class UserNotFoundException extends BaseException {
                 .setParamValue(value)
         );
     }
-
-    public UserNotFoundException(String key ,String value, Object object) {
-        super(new AppError()
-                .setErrorNameException(UserNotFoundException.class.getSimpleName())
-                .setParamKey(key)
-                .setParamValue(value)
-                .setData(object)
-        );
-    }
 }

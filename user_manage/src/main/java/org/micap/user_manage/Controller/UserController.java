@@ -13,6 +13,7 @@ import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.nest;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 /**
  * Created by Warren Stehen Aroni Soto.
@@ -35,25 +36,19 @@ public class UserController {
                         GET("/")        , Req -> userService.getUsers(Req)
                 ).andRoute(
                         GET("/{id}")    , Req -> userService.getUser(Req)
-                ).filter((req,next)->{
-                    List<String>l=req.headers().header("Authorization");
-                    if(l.size()==1){
-                        if(verifyFunctions(l.get(0),auth+"-GET")==true){
-                            return next.handle(req);
-                        }
-                    }
-                    return ServerResponse.status(UNAUTHORIZED).build();
-                })
+                ).filter((req,next)->verifyFunctions(req,next,auth+"-GET"))
         ).andNest(path(RUTE),
                 route(
                         PUT("/")        , Req -> userService.modifyUser(Req)
-                ).andRoute(
-                        DELETE("/{id}") , Req -> userService.removeUser(Req)
-                )
+                ).filter((req,next)->verifyFunctions(req,next,auth+"-PUT"))
         ).andNest(path(RUTE),
                 route(
                         POST("/")       , Req -> userService.createUser(Req)
                 )
+        ).andNest(path(RUTE),
+                route(
+                        DELETE("/{id}") , Req -> userService.removeUser(Req)
+                ).filter((req,next)->verifyFunctions(req,next,auth+"-DELETE"))
         );
     }
 }

@@ -6,10 +6,17 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import org.micap.common.entity.Function;
+import org.springframework.web.reactive.function.server.HandlerFunction;
+import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 /**
  * The Jwt class is implemment to
@@ -41,16 +48,20 @@ public class Jwt {
         }
     }
 
-    public static Boolean verifyFunctions(String token,String function){
-        System.out.println("warren");
+    public static Mono<ServerResponse> verifyFunctions(ServerRequest req, HandlerFunction<ServerResponse> next, String function){
         try {
-            DecodedJWT jwt = JWT.decode(token);
+            List<String> l=req.headers().header("Authorization");
+            if(l.size()!=1)
+                return ServerResponse.status(UNAUTHORIZED).build();
+
+
+            DecodedJWT jwt = JWT.decode(l.get(0));
             System.out.println(jwt.getHeaderClaim(Function).asString()+"-->>>"+function);
-            return jwt.getHeaderClaim(Function).asString().indexOf(function)!=-1;
+            return jwt.getHeaderClaim(Function).asString().indexOf(function)!=-1?
+                    next.handle(req):
+                    ServerResponse.status(UNAUTHORIZED).build();
         } catch (JWTDecodeException exception){
-            System.out.println("no llego"+exception+" "+token);
-            //Invalid token
-            return false;
+            return ServerResponse.status(UNAUTHORIZED).build();
         }
     }
 }

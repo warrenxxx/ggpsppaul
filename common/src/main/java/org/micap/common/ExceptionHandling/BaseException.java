@@ -42,13 +42,17 @@ public class BaseException extends Throwable{
 
     private static String getErrorMessage(AppError appError){
 
-        System.out.println("waren");
         String properti= AppProperties.readProperties(appError.errorNameException);
-        String []propertiesValue=properti.split("|");
-        String message="Error: "+appError.errorNameException+" - Code: "+propertiesValue[1]+" - Message:" +propertiesValue[2] ;
+        String []propertiesValue=properti.split("--");
 
+        appError.setErrorCode(propertiesValue[0]);
+
+        String message="Error: "+appError.errorNameException+" - Code: "+propertiesValue[0]+" - Message:" +propertiesValue[2] ;
         message=String.format(message,new String[]{appError.paramKey,appError.paramValue});
         appError.errorMessage=message;
+
+        appError.setErrorMessage(message)
+                .setErrorDate(LocalDate.now());
         return message;
     }
 }

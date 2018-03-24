@@ -31,5 +31,5 @@ import java.util.Map;
 @AllArgsConstructor
 public class AppResponse {
     public Object data;
-    public AppError errors[];
+    public AppError error;
 }

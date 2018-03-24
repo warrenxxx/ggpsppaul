@@ -43,26 +43,5 @@ public class LoginService {
                         new AppResponse(userDto.setToken(toJwt(userDto.get_id(),loginDaoImp.getFunctions(userDto.get_id()).block())),null)
                     ),
                     AppResponse.class);
-  /*
-        return serverRequest.bodyToMono(LoginDto.class).flatMap(
-                e->loginDaoImp.getUserDto(e.getUserName(),e.getPassword())
-                        .defaultIfEmpty(new UserDto())
-                        .flatMap(
-                            userDto->
-                                    ok().body(Mono.just(userDto.get_id()!=null?
-                                    new AppResponse(
-                                            userDto
-//                                                    .setToken(loginDaoImp.getFunctions(userDto.get_id()).block())
-                                            ,
-                                            null):
-                                    new AppResponse(null,
-                                            new AppError[]{
-                                                new AppError().setErrorCode("400").setErrorMessage("no es encontro este usuario")
-                                            }
-                                    )
-                            ),AppResponse.class)
-                        )
-        );//        return ServerResponse.status(200).body(Mono.just(""),String.class);
-*/
     }
 }
