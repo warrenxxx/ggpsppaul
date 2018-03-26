@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="286db7aa-bad0-40d4-89f3-f82031c2ebbc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDaoMongo.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/AuthorizationException.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/AuthorizationException.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/BaseException.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/BaseException.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/ExceptionFactory.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/FactoryException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/UserNotFoundException.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/UserNotFoundException.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppError.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppError.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/security/Jwt.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/security/Jwt.java" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/common/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/LoginManageApplication.java" afterPath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/LoginManageApplication.java" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/controller/LoginController.java" afterPath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/controller/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDao.java" afterPath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDao.java" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDaoMongoImp.java" afterPath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDaoMongoImp.java" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/service/LoginService.java" afterPath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/service/LoginService.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/RoleManageApplication.java" afterPath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/RoleManageApplication.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDao.java" afterPath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDao.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDao1.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDaoImp.java" afterPath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDaoImp.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/service/RoleService.java" afterPath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/service/RoleService.java" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/org/micap/user_manage/Controller/UserController.java" afterPath="$PROJECT_DIR$/user_manage/src/main/java/org/micap/user_manage/Controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/org/micap/user_manage/service/UserService.java" afterPath="$PROJECT_DIR$/user_manage/src/main/java/org/micap/user_manage/service/UserService.java" />
-    </list>
+    <list default="true" id="286db7aa-bad0-40d4-89f3-f82031c2ebbc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/common/target/" />
     <ignored path="$PROJECT_DIR$/user/target/" />
     <ignored path="$PROJECT_DIR$/role/target/" />
@@ -112,8 +84,8 @@
       <file leaf-file-name="JhoelaApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jhoela/src/main/java/org/micap/jhoela/JhoelaApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+            <state relative-caret-position="315">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -327,61 +299,6 @@
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="entitys" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jhoela" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
@@ -728,12 +645,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521342038705</updated>
       <workItem from="1521342040137" duration="137370000" />
-      <workItem from="1521821214733" duration="56435000" />
+      <workItem from="1521821214733" duration="56784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193805000" />
+    <option name="totallyTimeSpent" value="194154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,7 +663,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -763,11 +679,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24543501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1221,8 +1137,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jhoela/src/main/java/org/micap/jhoela/JhoelaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+        <state relative-caret-position="315">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
