@@ -21,30 +21,20 @@ import java.time.LocalDate;
 
 public class AppError {
 
-    public String errorCode;
-    public String errorNameException;
-    public String errorMessage;
-    public String errorMessage2;
-    public LocalDate errorDate;
+    public String errorCode;                //este es el codigo del error respuesta
+    public String errorNameException;       //este es el nombre de error
+    public String errorMessageControlado;   //error controlado
+    public String errorMessageSystem;       //error no controlado
+    public LocalDate errorDate;             //tiempo en el que se creo el error
 
-    public Object data;
-    public String paramKey;
-    public String paramValue;
+    public Object data;                     //objeto si es que exisitiera
+    public String paramKey;                 //parametro mediante el cualse reconoce al causante
+    public String paramValue;               //parametro del valor del parametro del causante
 
 
-    public String operation;
-    public String resource;
+    public String operation;                //operacion en el que se iso el error
+//    public String resource;
 
-    /**
-     * Sets the errorMessage2.
-     *
-     * @param errorMessage2 the errorMessage2 to set
-     * @return AppError
-     */
-    public AppError setErrorMessage2(String errorMessage2) {
-        this.errorMessage2 = errorMessage2;
-        return this;
-    }
 
     /**
      * Sets the errorCode.
@@ -68,16 +58,6 @@ public class AppError {
         return this;
     }
 
-    /**
-     * Sets the errorMessage.
-     *
-     * @param errorMessage the errorMessage to set
-     * @return AppError
-     */
-    public AppError setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-        return this;
-    }
 
     /**
      * Sets the errorDate.
@@ -135,13 +115,24 @@ public class AppError {
     }
 
     /**
-     * Sets the resource.
+     * Sets the errorMessageControlado.
      *
-     * @param resource the resource to set
+     * @param errorMessageControlado the errorMessageControlado to set
      * @return AppError
      */
-    public AppError setResource(String resource) {
-        this.resource = resource;
+    public AppError setErrorMessageControlado(String errorMessageControlado) {
+        this.errorMessageControlado = errorMessageControlado;
+        return this;
+    }
+
+    /**
+     * Sets the errorMessageSystem.
+     *
+     * @param errorMessageSystem the errorMessageSystem to set
+     * @return AppError
+     */
+    public AppError setErrorMessageSystem(String errorMessageSystem) {
+        this.errorMessageSystem = errorMessageSystem;
         return this;
     }
 }

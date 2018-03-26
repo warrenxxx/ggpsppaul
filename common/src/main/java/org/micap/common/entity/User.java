@@ -28,6 +28,8 @@ public class User {
     private Account account;
     private Audit audit;
 
+    private UserMovieDetail userMovieDetails[];
+
     /**
      * Sets the _id.
      *

@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Data
 @ToString
 @EqualsAndHashCode
 @Document

@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ProjectoMicap.iml" filepath="$PROJECT_DIR$/.idea/ProjectoMicap.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jhoela/jhoela.iml" filepath="$PROJECT_DIR$/jhoela/jhoela.iml" />
       <module fileurl="file://$PROJECT_DIR$/login_manage/login_manage.iml" filepath="$PROJECT_DIR$/login_manage/login_manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/role_manage/role_manage.iml" filepath="$PROJECT_DIR$/role_manage/role_manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/user_manage/user_manage.iml" filepath="$PROJECT_DIR$/user_manage/user_manage.iml" />

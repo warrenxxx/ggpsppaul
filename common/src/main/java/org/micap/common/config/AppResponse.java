@@ -40,27 +40,42 @@ public class AppResponse {
     public Object data;
     public AppError error;
 
-    public AppResponse(Object data) {
+    public AppResponse(Object data, Throwable error) {
+        if(data==null){
+            if(error instanceof BaseException)
+                this.error=((BaseException)error).appError;
+            else
+                this.error=new SystemException("System","error",error.getMessage()).appError;
+        }else {
+            this.data=data;
+        }
+    }
+/*
+    public AppResponse(Object data)
+    {
         this.data = data;
     }
 
-    public AppResponse(Throwable e,Object o) {
+    public AppResponse(Throwable e){
         if(e instanceof BaseException)
             this.error=((BaseException)e).appError;
         else
             this.error=new SystemException("System","error",e.getMessage()).appError;
     }
+*/
     public static Mono<ServerResponse> AppResponseError(Throwable t){
         return badRequest()
                 .body(
-                        Mono.just(new AppResponse(t,null))
+                        Mono.just(
+                                new AppResponse(null,t)
+                        )
                         ,AppResponse.class
                 );
     }
-    public static Mono<ServerResponse> AppResponseOk(Object t){
+    public static Mono<ServerResponse> AppResponseOk(Object responseObject){
         return ok()
                 .body(
-                        Mono.just(new AppResponse(t))
+                        Mono.just(new AppResponse(responseObject,null))
                         ,AppResponse.class
                 );
     }

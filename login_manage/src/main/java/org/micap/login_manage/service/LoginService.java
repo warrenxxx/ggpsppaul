@@ -32,10 +32,19 @@ public class LoginService {
     LoginDaoMongoImp loginDaoImp;
 
     public Mono<ServerResponse> login(ServerRequest serverRequest){
-        UserDto user=loginDaoImp.getUserDto(serverRequest.bodyToMono(LoginDto.class).block()).defaultIfEmpty(new UserDto()).block();
+        UserDto user=loginDaoImp
+                .getUserDto(
+                        serverRequest.bodyToMono(LoginDto.class).block()
+                )
+                .defaultIfEmpty(new UserDto())
+                .block();
+
+        //MONO<USERDTO>
+        //JUST SIRVE PARA STORE ITEM IN MONO OR FLUX
         return Mono.just(user)
                 .filter(userDto -> userDto.get_id()!=null)
-                .map(userDto->userDto.setToken(
+                .map(
+                        userDto->userDto.setToken(
                                 toJwt(userDto.get_id(), loginDaoImp.getFunctions(userDto.get_id()).block())
                             )
                 )

@@ -16,7 +16,7 @@ public class SystemException extends  BaseException{
                         .setParamKey(key)
                         .setParamValue(value)
                 .setErrorNameException(SystemException.class.getSimpleName())
-                .setErrorMessage2(message)
+                .setErrorMessageSystem(message)
         );
     }
     public SystemException(Throwable t) {
@@ -25,7 +25,7 @@ public class SystemException extends  BaseException{
                         .setParamKey(t.getClass().getSimpleName())
                         .setParamValue(t.getLocalizedMessage())
                         .setErrorNameException(SystemException.class.getSimpleName())
-                        .setErrorMessage2(t.getMessage())
+                        .setErrorMessageSystem(t.getMessage())
         );
     }
 }

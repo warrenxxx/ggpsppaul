@@ -48,9 +48,8 @@ public class BaseException extends Throwable{
 
         String message="Error: "+appError.errorNameException+" - Code: "+propertiesValue[0]+" - Message:" +propertiesValue[2] ;
         message=String.format(message,new String[]{appError.paramKey,appError.paramValue});
-        appError.errorMessage=message;
-
-        appError.setErrorMessage(message)
+//        appError.errorMessageControlado=message;
+        appError.setErrorMessageControlado(message)
                 .setErrorDate(LocalDate.now());
         return message;
     }

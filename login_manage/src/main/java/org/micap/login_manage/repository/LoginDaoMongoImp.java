@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 /**
  * The UserDaoImp class is implemment to
@@ -37,7 +38,7 @@ public class LoginDaoMongoImp implements LoginDao {
 
     public Mono<String> getFunctions(String id) {
         return  reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                match(Criteria.where("_id").is(new ObjectId(id))),
+                match(where("_id").is(new ObjectId(id))),
                 replaceRoot("account"),
                 unwind("roles"),
                 lookup("role","roles","_id","roles"),
@@ -55,7 +56,7 @@ public class LoginDaoMongoImp implements LoginDao {
     @Override
     public Mono<User> getUser(String userName) {
         reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-            match(Criteria.where("account.userName").is(userName))
+            match(where("account.userName").is(userName))
         ),"user",User.class);
         return null;
     }
@@ -63,7 +64,12 @@ public class LoginDaoMongoImp implements LoginDao {
     @Override
     public Mono<UserDto> getUserDto(LoginDto loginDto) {
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                match(Criteria.where("account.userName").is(loginDto.getUserName()).and("account.password").is(loginDto.getPassword())),
+                match(
+                        where("account.userName")
+                            .is(loginDto.getUserName())
+                        .and("account.password")
+                            .is(loginDto.getPassword())
+                ),
                 unwind("account.roles"),
                 lookup("role","account.roles","_id","roles"),
                 unwind("roles"),
