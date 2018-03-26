@@ -39,7 +39,6 @@ public class BaseException extends Throwable{
 
         ErrorDaoMongoImpl.saveError(appError);
     }
-
     private static String getErrorMessage(AppError appError){
 
         String properti= AppProperties.readProperties(appError.errorNameException);

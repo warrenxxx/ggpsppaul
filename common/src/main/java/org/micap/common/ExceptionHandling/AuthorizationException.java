@@ -10,8 +10,28 @@ import org.micap.common.config.AppError;
  * @since :23/03/2018
  */
 public class AuthorizationException extends BaseException {
-
-    public AuthorizationException(AppError appError) {
-        super(appError);
+    public AuthorizationException(String userName) {
+        super(
+                new AppError()
+                        .setParamValue("userName")
+                        .setParamValue(userName)
+                        .setErrorNameException(AuthorizationException.class.getSimpleName() )
+        );
+    }
+    public AuthorizationException() {
+        super(
+                new AppError()
+                        .setParamValue("Authorization")
+                        .setParamValue("0")
+                        .setErrorNameException(AuthorizationException.class.getSimpleName() )
+        );
+    }
+    public AuthorizationException(String key,String value) {
+        super(
+                new AppError()
+                        .setParamValue(key)
+                        .setParamValue(value)
+                        .setErrorNameException(AuthorizationException.class.getSimpleName() )
+        );
     }
 }

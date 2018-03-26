@@ -1,17 +1,17 @@
 package org.micap.role_manage.service;
 
-import org.bson.types.ObjectId;
+import org.micap.common.ExceptionHandling.DuplicateIdException;
+import org.micap.common.ExceptionHandling.SystemException;
+import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
 import org.micap.common.entity.Role;
 import org.micap.role_manage.repository.RoleDaoImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-import static org.springframework.web.reactive.function.BodyInserters.fromObject;
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -22,39 +22,41 @@ public class RoleService {
     private RoleDaoImp roleDaoImp;
 
     public Mono<ServerResponse> getRoles(ServerRequest serverRequest){
-        return ok().body(roleDaoImp.getRoles().map(e->new AppResponse(e,null)),AppResponse.class);
+        return roleDaoImp.getRoles()
+                .collectList()
+                .flatMap(e->AppResponse.AppResponseOk(e))
+                .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
     }
 
     public Mono<ServerResponse> getRole(ServerRequest serverRequest){
-        return roleDaoImp.getRole(serverRequest.pathVariable("id")).flatMap(
-                role -> ok().contentType(MediaType.APPLICATION_JSON)
-                        .body(fromObject(new AppResponse(role,null)))
-                        .switchIfEmpty(
-                                notFound().build()
-                        )
-        );
+        return roleDaoImp.getRole(serverRequest.pathVariable("_id"))
+                .flatMap(e->AppResponse.AppResponseOk(e))
+                .switchIfEmpty(Mono.error(new UserNotFoundException("_id",serverRequest.pathVariable("_id"))))
+                .onErrorResume(e->AppResponse.AppResponseError(e));
     }
     public Mono<ServerResponse> createRole(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Role.class).flatMap(
-                role->roleDaoImp.roleDao.existsById(role.get_id())
+                role->roleDaoImp.existById(role.get_id())
                     .flatMap(
-                            existe->existe==true?notFound().build(): ok().body(roleDaoImp.CreateRole(role),Role.class)
+                            existe->existe==true?
+                                    Mono.error(new DuplicateIdException(role.get_id())):
+                                    ok().body(roleDaoImp.CreateRole(role),Role.class)
                     )
-        );
+                ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
 
     public Mono<ServerResponse> modifyRole(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Role.class).flatMap(
-                role->roleDaoImp.roleDao.existsById(role.get_id())
+                role->roleDaoImp.roleDaoMongo.existsById(role.get_id())
                         .flatMap(
-                                existe->existe==true?notFound().build(): ok().body(roleDaoImp.roleDao.save(role),Role.class)
+                                existe->existe==true?notFound().build(): ok().body(roleDaoImp.roleDaoMongo.save(role),Role.class)
                         )
         );
     }
     public Mono<ServerResponse> removerole(ServerRequest serverRequest){
-        return roleDaoImp.roleDao.findById(serverRequest.pathVariable("id"))
+        return roleDaoImp.roleDaoMongo.findById(serverRequest.pathVariable("id"))
                 .flatMap(
-                        account->ok().build(roleDaoImp.roleDao.deleteById(serverRequest.pathVariable("id")))
+                        account->ok().build(roleDaoImp.roleDaoMongo.deleteById(serverRequest.pathVariable("id")))
                 )
                 .switchIfEmpty(notFound().build());
     }

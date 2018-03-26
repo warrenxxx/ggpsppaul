@@ -38,16 +38,7 @@ public class LoginController {
     RouterFunction<ServerResponse> Route(LoginService loginService) {
         return nest(path(RUTE),
                 route(
-                        POST("/")        , Req -> loginService.login(Req).onErrorResume(e-> Mono.error(e))
-                                        .onErrorResume( e->
-                                                            badRequest()
-                                                                    .body(
-                                                                        Mono.just(
-                                                                                new AppResponse(
-                                                                                    null,
-                                                                                    ((BaseException) e).appError))
-                                                                        ,AppResponse.class)
-                                        )
+                        POST("/")        , Req -> loginService.login(Req)
                 )
         );
     }

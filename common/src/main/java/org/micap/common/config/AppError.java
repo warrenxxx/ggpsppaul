@@ -24,6 +24,7 @@ public class AppError {
     public String errorCode;
     public String errorNameException;
     public String errorMessage;
+    public String errorMessage2;
     public LocalDate errorDate;
 
     public Object data;
@@ -33,6 +34,17 @@ public class AppError {
 
     public String operation;
     public String resource;
+
+    /**
+     * Sets the errorMessage2.
+     *
+     * @param errorMessage2 the errorMessage2 to set
+     * @return AppError
+     */
+    public AppError setErrorMessage2(String errorMessage2) {
+        this.errorMessage2 = errorMessage2;
+        return this;
+    }
 
     /**
      * Sets the errorCode.

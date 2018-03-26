@@ -41,7 +41,8 @@ public class UserService {
         return
                 ok().body(
                         userDaoImp.getUsers()
-                                .map(e->new AppResponse(e,null))
+//                                .map(e->new AppResponse(e,null))
+                                .map(e->new AppResponse(e))
                         ,AppResponse.class
                 );
     }
@@ -49,7 +50,7 @@ public class UserService {
     public Mono<ServerResponse> getUser(ServerRequest serverRequest){
         return userDaoImp.getUser(serverRequest.pathVariable("id")).flatMap(
                 userDto -> ok().contentType(MediaType.APPLICATION_JSON)
-                        .body(fromObject(new AppResponse(userDto,null)))
+                        .body(fromObject(new AppResponse(userDto)))
                         .switchIfEmpty(
                                 Mono.error(new InvalidParameterException())
                         )

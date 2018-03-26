@@ -32,16 +32,15 @@ public class LoginService {
     LoginDaoMongoImp loginDaoImp;
 
     public Mono<ServerResponse> login(ServerRequest serverRequest){
-        LoginDto loginDto=serverRequest.bodyToMono(LoginDto.class).block();
-        UserDto userDto=loginDaoImp.getUserDto(loginDto).block();
-
-        if(userDto==null)
-            return Mono.error(new UserNotFoundException(loginDto.getUserName(),""));
-        else
-            return ok().body(
-                    Mono.just(
-                        new AppResponse(userDto.setToken(toJwt(userDto.get_id(),loginDaoImp.getFunctions(userDto.get_id()).block())),null)
-                    ),
-                    AppResponse.class);
+        UserDto user=loginDaoImp.getUserDto(serverRequest.bodyToMono(LoginDto.class).block()).defaultIfEmpty(new UserDto()).block();
+        return Mono.just(user)
+                .filter(userDto -> userDto.get_id()!=null)
+                .map(userDto->userDto.setToken(
+                                toJwt(userDto.get_id(), loginDaoImp.getFunctions(userDto.get_id()).block())
+                            )
+                )
+                .flatMap(e->AppResponse.AppResponseOk(e))
+                .switchIfEmpty(Mono.error(new UserNotFoundException()))
+                .onErrorResume(e->AppResponse.AppResponseError(e));
     }
 }

@@ -2,21 +2,26 @@ package org.micap.common.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTCreationException;
-import com.auth0.jwt.exceptions.JWTDecodeException;
+
 import com.auth0.jwt.interfaces.DecodedJWT;
-import org.micap.common.entity.Function;
+import org.micap.common.ExceptionHandling.AuthorizationException;
+import org.micap.common.ExceptionHandling.BaseException;
+import org.micap.common.ExceptionHandling.HeaderException;
+import org.micap.common.ExceptionHandling.SystemException;
+import org.micap.common.config.AppResponse;
 import org.springframework.web.reactive.function.server.HandlerFunction;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
+import java.awt.*;
 import java.util.List;
 import java.util.Map;
 
-import static org.springframework.http.HttpStatus.UNAUTHORIZED;
+import static org.springframework.web.reactive.function.server.ServerResponse.badRequest;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;
+
 
 /**
  * The Jwt class is implemment to
@@ -31,37 +36,42 @@ public class Jwt {
     public static String toJwt(String _id,String functions){
         functions=functions==null?"":functions;
         try {
-            System.out.println(_id);
             return JWT.create()
                     .withIssuer("auth0")
                     .withHeader(Map.of(
                         "_id",_id,
                         Function,functions
                     ))
+
                     .sign(Algorithm.HMAC256("SECRETO"));
-        } catch (UnsupportedEncodingException exception){
-            //UTF-8 encoding not supported
+        } catch (Exception exception){
             return "";
-        } catch (JWTCreationException exception){
-            return "";
-            //Invalid Signing configuration / Couldn't convert Claims.
         }
     }
 
-    public static Mono<ServerResponse> verifyFunctions(ServerRequest req, HandlerFunction<ServerResponse> next, String function){
-        try {
-            List<String> l=req.headers().header("Authorization");
+
+    public static Mono<ServerResponse> verifyFunctions(ServerRequest req, HandlerFunction<ServerResponse> next, String function) {
+            return Flux.just(req.headers().header("Authorization").toArray(new String[0]))
+                    .limitRequest(1)
+                    .map(e-> JWT.decode(e))
+                    .flatMap(e->e.getHeaderClaim(Function).asString().contains(function)?
+                                    next.handle(req):
+                                    Mono.error(new AuthorizationException("_id",e.getHeaderClaim("_id").asString())))
+                    .publishNext()
+                    .switchIfEmpty(Mono.error(new HeaderException("Authorization")))
+//                    .onErrorResume(e->badRequest().body(Mono.just(new AppResponse(e)),AppResponse.class))
+                    .onErrorResume(e->AppResponse.AppResponseError(e))
+                    ;
+
+
+/*
             if(l.size()!=1)
-                return ServerResponse.status(UNAUTHORIZED).build();
-
-
+                return Mono.error(new HeaderException("Authorization"));
             DecodedJWT jwt = JWT.decode(l.get(0));
-            System.out.println(jwt.getHeaderClaim(Function).asString()+"-->>>"+function);
-            return jwt.getHeaderClaim(Function).asString().indexOf(function)!=-1?
-                    next.handle(req):
-                    ServerResponse.status(UNAUTHORIZED).build();
-        } catch (JWTDecodeException exception){
-            return ServerResponse.status(UNAUTHORIZED).build();
-        }
+            return jwt.getHeaderClaim(Function).asString().contains(function) ?
+                        next.handle(req):
+                        Mono.error(new AuthorizationException("id",jwt.getHeaderClaim("_id").asString()));
+*/
     }
+
 }

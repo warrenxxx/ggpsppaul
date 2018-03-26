@@ -31,12 +31,14 @@ public class UserController {
 
     @Bean
     RouterFunction<ServerResponse> Route(UserService userService) {
-        return nest(path(RUTE),
+        return
+         nest(path(RUTE),
                 route(
                         GET("/")        , Req -> userService.getUsers(Req)
                 ).andRoute(
                         GET("/{id}")    , Req -> userService.getUser(Req)
                 ).filter((req,next)->verifyFunctions(req,next,auth+"-GET"))
+
         ).andNest(path(RUTE),
                 route(
                         PUT("/")        , Req -> userService.modifyUser(Req)
