@@ -97,7 +97,16 @@ public class UserDaoMongoImp implements UserDao {
 
     @Override
     public Mono<UserDto> updateUser(User user) {
-        return null;
+        return this.userDaoMongo.save(user)
+                .map(e->new UserDto(
+                        e.get_id(),
+                        e.getFirstName(),
+                        e.getLastName(),
+                        e.getBirthDate(),
+                        e.getGender(),
+                        new AccountDto().setEmail(e.getAccount().getEmail())
+                                .setUserName(e.getAccount().getUserName())
+                ));
     }
 
 

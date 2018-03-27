@@ -110,4 +110,7 @@ public class User {
     public User newAudit(){
         return this.setAudit(new Audit(get_id()));
     }
+    public User updateAudit(String id){
+        return this.setAudit(this.getAudit().update(id));
+    }
 }

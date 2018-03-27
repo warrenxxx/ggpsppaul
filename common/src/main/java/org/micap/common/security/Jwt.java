@@ -59,9 +59,17 @@ public class Jwt {
                                     Mono.error(new AuthorizationException("_id",e.getHeaderClaim("_id").asString())))
                     .publishNext()
                     .switchIfEmpty(Mono.error(new HeaderException("Authorization")))
-//                    .onErrorResume(e->badRequest().body(Mono.just(new AppResponse(e)),AppResponse.class))
                     .onErrorResume(e->AppResponse.AppResponseError(e))
                     ;
+    }
+    public static Mono<String> getIdOfJwtToken(ServerRequest req) {
+        return Flux.just(req.headers().header("Authorization").toArray(new String[0]))
+                .limitRequest(1)
+                .map(e-> JWT.decode(e))
+                .map(e->e.getHeaderClaim(Function).asString())
+                .switchIfEmpty(Mono.error(new HeaderException("Authorization")))
+                .publishNext()
+                ;
 
 
 /*

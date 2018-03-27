@@ -18,6 +18,7 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import static org.micap.common.security.Jwt.getIdOfJwtToken;
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -48,6 +49,7 @@ public class UserService {
                 .switchIfEmpty(Mono.error(new UserNotFoundException("_id",serverRequest.pathVariable("_id"))))
                 .onErrorResume(e->AppResponse.AppResponseError(e));
     }
+
     public Mono<ServerResponse> createUser(ServerRequest serverRequest){
         return serverRequest.bodyToMono(User.class).flatMap(
                 user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
@@ -62,19 +64,33 @@ public class UserService {
                                                         .setRoles(new String[]{"USER"})
                                                         .setFunctions(new Function[]{})
                                                 )
-                                        ).map(e->"User Registrado"))
+                                        ).map(e->"registered user"))
                         )
         ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
 
     public Mono<ServerResponse> modifyUser(ServerRequest serverRequest){
-        return  userDaoImp.createUser(
-                serverRequest.bodyToMono(User.class)
-                        .block()
-                        .newAudit()
-        )
-                .flatMap(User->ok().build())
-                .switchIfEmpty(notFound().build());
+        return serverRequest.bodyToMono(User.class).flatMap(
+                user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
+                        .count()
+                        .flatMap(
+                                size -> size>0?
+                                        Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())):
+                                        getIdOfJwtToken(serverRequest).flatMap(
+                                                id->AppResponse.AppResponseOkMono(
+                                                        userDaoImp.updateUser(
+                                                                user
+                                                                .updateAudit(id)
+                                                                .setAccount(
+                                                                        user.getAccount()
+                                                                                .setRoles(new String[]{"USER"})
+                                                                                .setFunctions(new Function[]{})
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        )
+        ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
     public Mono<ServerResponse> removeUser(ServerRequest serverRequest){
         return userDaoImp.getUser(serverRequest.pathVariable("id"))
