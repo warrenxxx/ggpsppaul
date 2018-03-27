@@ -7,24 +7,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
+        <module name="demo" />
         <module name="login_manage" />
+        <module name="login_management" />
+        <module name="microlecsson_management" />
         <module name="role_manage" />
-        <module name="user_manage" />
+        <module name="role_management" />
+        <module name="user_management" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="9" />
-      <module name="common2" target="1.5" />
-      <module name="common3" target="1.5" />
-      <module name="demo" target="1.8" />
-      <module name="gg" target="1.5" />
-      <module name="jhoela" target="1.8" />
+      <module name="demo" target="9" />
       <module name="login_manage" target="9" />
-      <module name="role" target="1.8" />
+      <module name="login_management" target="9" />
+      <module name="microlecsson_management" target="9" />
       <module name="role_manage" target="1.8" />
-      <module name="user" target="1.8" />
+      <module name="role_management" target="1.8" />
       <module name="user_manage" target="9" />
-      <module name="waren" target="1.5" />
+      <module name="user_management" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

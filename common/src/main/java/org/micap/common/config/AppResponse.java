@@ -79,4 +79,11 @@ public class AppResponse {
                         ,AppResponse.class
                 );
     }
+    public static Mono<ServerResponse> AppResponseOk(Mono responseObject,Class clas){
+        return ok()
+                .body(
+                        responseObject
+                        ,clas
+                );
+    }
 }
