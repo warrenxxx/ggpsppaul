@@ -79,11 +79,11 @@ public class AppResponse {
                         ,AppResponse.class
                 );
     }
-    public static Mono<ServerResponse> AppResponseOk(Mono responseObject,Class clas){
+    public static Mono<ServerResponse> AppResponseOkMono(Mono object){
         return ok()
                 .body(
-                        responseObject
-                        ,clas
+                        object.map(e->new AppResponse(e,null))
+                        ,AppResponse.class
                 );
     }
 }

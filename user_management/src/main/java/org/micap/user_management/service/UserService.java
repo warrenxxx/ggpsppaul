@@ -49,36 +49,20 @@ public class UserService {
                 .onErrorResume(e->AppResponse.AppResponseError(e));
     }
     public Mono<ServerResponse> createUser(ServerRequest serverRequest){
-/*        return  serverRequest.bodyToMono(User.class).
-        flatMap(
-                e-> userDaoImp.getUsersbyUsernameAndEmail(e.getAccount().getUserName(),e.getAccount().getEmail())
-                        .count().block()==0?
-                            userDaoImp.createUser(
-                                            e.set_id(new ObjectId().toString())
-                                            .newAudit()
-                                            .setAccount(
-                                                    e.getAccount()
-                                                    .setRoles(new String[]{"USER"})
-                                                    .setFunctions(new Function[]{})
-                                            )
-                                    ).flatMap(x->ok().build()):
-                            notFound().build()
-        );
-  */
         return serverRequest.bodyToMono(User.class).flatMap(
                 user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
                         .count()
                         .flatMap(
                                 size -> size>0?
                                         Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())):
-                                        AppResponse.AppResponseOk(userDaoImp.createUser(
+                                        AppResponse.AppResponseOkMono(userDaoImp.createUser(
                                                 user.newAudit()
                                                 .setAccount(
                                                         user.getAccount()
                                                         .setRoles(new String[]{"USER"})
                                                         .setFunctions(new Function[]{})
                                                 )
-                                        ), UserDto.class)
+                                        ).map(e->"User Registrado"))
                         )
         ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
