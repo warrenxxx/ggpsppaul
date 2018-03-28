@@ -2,82 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f481908c-ddb8-4c58-9f09-3d88f3cc69a8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_reactive_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_reactive_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_1_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_1_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_0_5_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_0_5_BUILD_SNAPSHOT.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java" />
-      <change beforePath="$PROJECT_DIR$/demo/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/mvnw" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/mvnw.cmd" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/mvnw" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/mvnw.cmd" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/LoginManageApplication.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/controller/LoginController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/dto/FunctionsDto.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/dto/LoginDto.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/dto/UserDto.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDaoMongo.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/repository/LoginDaoMongoImp.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/service/LoginService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/resources/application-dev.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/resources/application-prd.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/main/resources/application-tst.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_manage/src/test/java/org/micap/login_manage/LoginManageApplicationTests.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" afterPath="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" />
-      <change beforePath="$PROJECT_DIR$/microlecsson_management/src/main/java/org/micap/microlecsson_management/main.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/mvnw" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/mvnw.cmd" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/RoleManageApplication.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/controller/RoleController.java" afterPath="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/controller/RoleController.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDao.java" afterPath="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/repository/RoleDao.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDaoImp.java" afterPath="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/repository/RoleDaoImp.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/repository/RoleDaoMongo.java" afterPath="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/repository/RoleDaoMongo.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/java/org/micap/role_manage/service/RoleService.java" afterPath="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/service/RoleService.java" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/resources/application-dev.properties" afterPath="$PROJECT_DIR$/role_management/src/main/resources/application-dev.properties" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/resources/application-prd.properties" afterPath="$PROJECT_DIR$/role_management/src/main/resources/application-prd.properties" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/main/resources/application-tst.properties" afterPath="$PROJECT_DIR$/role_management/src/main/resources/application-tst.properties" />
-      <change beforePath="$PROJECT_DIR$/role_manage/src/test/java/org/micap/role_manage/RoleManageApplicationTests.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/role_management/pom.xml" afterPath="$PROJECT_DIR$/role_management/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/role_management/src/main/resources/application.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java" afterPath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java" />
     </list>
     <ignored path="$PROJECT_DIR$/user_manage/target/" />
     <ignored path="$PROJECT_DIR$/microlecsson_management/target/" />
@@ -109,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginDaoMongoImp.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginDaoMongoImp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/repository/LoginDaoMongoImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="379">
               <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="47" />
               <folding />
             </state>
@@ -139,33 +65,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/service/RoleService.java">
+      <file leaf-file-name="UserManagementApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoleDaoImp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/repository/RoleDaoImp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="136">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-dev.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role_management/src/main/resources/application-dev.properties">
+      <file leaf-file-name="RoleManagementApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/RoleManagementApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -248,12 +172,12 @@
         <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/repository/LoginDao.java" />
         <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/service/LoginService.java" />
         <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java" />
         <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java" />
         <option value="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/service/RoleService.java" />
         <option value="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/controller/RoleController.java" />
         <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -337,80 +261,25 @@
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
+              <item name="role_management" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
+              <item name="role_management" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="login_management" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="role_management" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="role_management" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -418,29 +287,11 @@
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="role_management" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="user_management" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="role_management" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -686,12 +537,12 @@
       <workItem from="1522169105562" duration="2594000" />
       <workItem from="1522171809878" duration="40000" />
       <workItem from="1522172082235" duration="727000" />
-      <workItem from="1522173173368" duration="13901000" />
+      <workItem from="1522173173368" duration="14138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23181000" />
+    <option name="totallyTimeSpent" value="23418000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,12 +564,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296328" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -749,13 +600,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/login_manage/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
@@ -1029,33 +873,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#477#478#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#584#585#0" expanded="false" />
-            <element signature="e#628#629#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1158,8 +981,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/repository/LoginDaoMongoImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="379">
           <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/RoleManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding />
         </state>
       </provider>
