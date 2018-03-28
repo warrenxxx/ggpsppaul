@@ -1,11 +1,12 @@
-package org.micap.role_manage.service;
+package org.micap.role_management.service;
+
 
 import org.micap.common.ExceptionHandling.DuplicateIdException;
 import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
 import org.micap.common.entity.Role;
-import org.micap.role_manage.repository.RoleDaoImp;
+import org.micap.role_management.repository.RoleDaoImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -24,7 +25,7 @@ public class RoleService {
     public Mono<ServerResponse> getRoles(ServerRequest serverRequest){
         return roleDaoImp.getRoles()
                 .collectList()
-                .flatMap(e->AppResponse.AppResponseOk(e))
+                .flatMap(e-> AppResponse.AppResponseOk(e))
                     .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
     }
 

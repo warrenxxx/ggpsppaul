@@ -1,6 +1,6 @@
-package org.micap.role_manage.controller;
+package org.micap.role_management.controller;
 
-import org.micap.role_manage.service.RoleService;
+import org.micap.role_management.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;

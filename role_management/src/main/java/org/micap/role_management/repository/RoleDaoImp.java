@@ -1,4 +1,4 @@
-package org.micap.role_manage.repository;
+package org.micap.role_management.repository;
 
 import org.micap.common.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;

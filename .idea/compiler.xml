@@ -7,11 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
-        <module name="demo" />
-        <module name="login_manage" />
         <module name="login_management" />
         <module name="microlecsson_management" />
-        <module name="role_manage" />
         <module name="role_management" />
         <module name="user_management" />
       </profile>
