@@ -1,6 +1,6 @@
 package org.micap.login_management.controller;
 
-import org.micap.login_manage.service.LoginService;
+import org.micap.login_management.service.LoginService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;

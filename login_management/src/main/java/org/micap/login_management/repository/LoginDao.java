@@ -1,8 +1,9 @@
 package org.micap.login_management.repository;
 
 import org.micap.common.entity.User;
-import org.micap.login_manage.dto.LoginDto;
-import org.micap.login_manage.dto.UserDto;
+import org.micap.login_management.dto.LoginDto;
+import org.micap.login_management.dto.UserDto;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import reactor.core.publisher.Mono;
 
 /**

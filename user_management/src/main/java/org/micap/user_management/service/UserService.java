@@ -44,9 +44,9 @@ public class UserService {
     }
 
     public Mono<ServerResponse> getUser(ServerRequest serverRequest){
-        return userDaoImp.getUser(serverRequest.pathVariable("_id"))
+        return userDaoImp.getUser(serverRequest.pathVariable("id"))
                 .flatMap(e->AppResponse.AppResponseOk(e))
-                .switchIfEmpty(Mono.error(new UserNotFoundException("_id",serverRequest.pathVariable("_id"))))
+                .switchIfEmpty(Mono.error(new UserNotFoundException("_id",serverRequest.pathVariable("id"))))
                 .onErrorResume(e->AppResponse.AppResponseError(e));
     }
 
@@ -74,21 +74,22 @@ public class UserService {
                 user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
                         .count()
                         .flatMap(
-                                size -> size>0?
-                                        Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())):
-                                        getIdOfJwtToken(serverRequest).flatMap(
-                                                id->AppResponse.AppResponseOkMono(
-                                                        userDaoImp.updateUser(
-                                                                user
-                                                                .updateAudit(id)
-                                                                .setAccount(
-                                                                        user.getAccount()
-                                                                                .setRoles(new String[]{"USER"})
-                                                                                .setFunctions(new Function[]{})
+                                size -> size > 0 ?
+                                        Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())) :
+                                        getIdOfJwtToken(serverRequest)
+                                                .flatMap(
+                                                        id -> AppResponse.AppResponseOkMono(
+                                                                userDaoImp.updateUser(
+                                                                        user
+                                                                                .updateAudit(id)
+                                                                                .setAccount(
+                                                                                        user.getAccount()
+                                                                                                .setRoles(new String[]{"USER"})
+                                                                                                .setFunctions(new Function[]{})
+                                                                                )
                                                                 )
                                                         )
                                                 )
-                                        )
                         )
         ).onErrorResume(e->AppResponse.AppResponseError(e));
     }

@@ -2,9 +2,9 @@ package org.micap.login_management.service;
 
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
-import org.micap.login_manage.dto.LoginDto;
-import org.micap.login_manage.dto.UserDto;
-import org.micap.login_manage.repository.LoginDaoMongoImp;
+import org.micap.login_management.dto.LoginDto;
+import org.micap.login_management.dto.UserDto;
+import org.micap.login_management.repository.LoginDaoMongoImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;

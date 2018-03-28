@@ -1,5 +1,6 @@
 package org.micap.login_management.dto;
 
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
