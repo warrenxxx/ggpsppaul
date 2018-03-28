@@ -12,6 +12,6 @@ public class UserManagementApplication {
 		SpringApplication.run(UserManagementApplication.class, args);
 	}
 
-//	@Bean
-//	public CorsConfiguration corsConfiguration=new CorsConfiguration();
+
+	public CorsConfiguration corsConfiguration;
 }

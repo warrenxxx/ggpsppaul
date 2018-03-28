@@ -1,5 +1,7 @@
 package org.micap.common.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -13,6 +15,7 @@ import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
 
+@Configuration
 public class CorsConfiguration {
 
     private static final String ALLOWED_HEADERS = "x-requested-with, authorization, Content-Type, Authorization, credential, X-XSRF-TOKEN";
@@ -20,7 +23,7 @@ public class CorsConfiguration {
     private static final String ALLOWED_ORIGIN = "*";
     private static final String MAX_AGE = "3600";
 
-
+    @Bean
     public WebFilter corsFilter() {
         return (ServerWebExchange ctx, WebFilterChain chain) -> {
             ServerHttpRequest request = ctx.getRequest();
@@ -39,4 +42,5 @@ public class CorsConfiguration {
             return chain.filter(ctx);
         };
     }
+
 }
