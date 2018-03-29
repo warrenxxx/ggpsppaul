@@ -36,18 +36,22 @@ public class UserDaoMongoImp implements UserDao {
 
 
 
+    @Override
     public Flux<UserDto> getUsers(){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 Aggregation.project("firstName","lastName","birthDate","gender","account")
-        ),"user",UserDto.class).map(e->e.setIdToString());
+        ),"user",UserDto.class);
     }
 
+    @Override
     public Mono<UserDto> getUser(String id){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
                 Aggregation.project("firstName","lastName","birthDate","gender","account")
         ),"user",UserDto.class).map(e->e.setIdToString()).publishNext();
     }
+
+    @Override
     public Flux<AccountDto> getUsersbyUsername(String userName){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 replaceRoot("account"),
@@ -55,6 +59,7 @@ public class UserDaoMongoImp implements UserDao {
         ),"user",AccountDto.class);
     }
 
+    @Override
     public Mono<User> getUser(String username, String password){
         this.userDaoMongo.findOne(Example.of(new User().setAccount(new Account().setUserName(username))))
                 .filter(
@@ -66,6 +71,7 @@ public class UserDaoMongoImp implements UserDao {
         return null;
     }
 
+    @Override
     public Flux<Function> getFunctions(String id){
         return  reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 match(Criteria.where("_id").is(new ObjectId(id))),
@@ -112,18 +118,17 @@ public class UserDaoMongoImp implements UserDao {
 
     @Override
     public Mono<Void> deleteUser(User user) {
-        return null;
+        return this.userDaoMongo.delete(user);
     }
 
     @Override
     public Mono<Void> deleteUser(String id) {
-        return null;
+        return this.userDaoMongo.deleteById(id);
     }
 
     @Override
     public Mono<Boolean> existById(String id) {
         return this.userDaoMongo.existsById(id);
     }
-
 
 }

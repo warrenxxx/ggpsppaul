@@ -5,7 +5,6 @@ import org.micap.common.enums.Sexo;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * The User class is implemment to
@@ -28,7 +27,6 @@ public class User {
     private Account account;
     private Audit audit;
 
-    private UserMovieDetail userMovieDetails[];
 
     /**
      * Sets the _id.

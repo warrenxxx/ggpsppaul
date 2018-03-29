@@ -7,7 +7,7 @@ package org.micap.common.enums;
  * @Author :warren
  * @since :26/03/2018
  */
-public enum CategoryMovie {
+public enum CategoryMicroLesson {
     HISTORY,
     MATEMATICS,
     LANGUAGES

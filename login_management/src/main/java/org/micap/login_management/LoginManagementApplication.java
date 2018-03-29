@@ -20,6 +20,7 @@ public class LoginManagementApplication {
 	public WebFilter corsFilter(){
 		return CorsConfiguration.corsFilter();
 	}
+
 	@Bean
 	CommandLineRunner commandLineRunner(LoginDaoMongoImp loginDaoMongoImp){
 		return args -> {

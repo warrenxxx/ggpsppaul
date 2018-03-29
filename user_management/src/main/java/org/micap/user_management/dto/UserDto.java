@@ -1,6 +1,7 @@
 package org.micap.user_management.dto;
 
 import lombok.*;
+import org.micap.common.entity.User;
 import org.micap.common.enums.Sexo;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -21,12 +22,21 @@ import java.time.LocalDate;
 @Document
 
 public class UserDto {
+
     private String _id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private Sexo gender;
     private AccountDto account;
+
+    public UserDto(User user){
+        this._id=user.get_id();
+        this.firstName=user.getFirstName();
+        this.lastName=user.getFirstName();
+
+    }
+
     public UserDto setIdToString(){
         this._id=this._id.toString();
         return this;

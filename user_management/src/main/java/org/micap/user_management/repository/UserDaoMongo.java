@@ -13,5 +13,5 @@ import reactor.core.publisher.Mono;
  * @since :18/03/2018
  */
 public interface UserDaoMongo extends  ReactiveMongoRepository<User,String>{
-    Flux<User> findByLastName(Mono<String> lastName);
+
 }

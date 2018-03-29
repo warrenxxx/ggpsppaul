@@ -8,8 +8,7 @@ import org.micap.common.ExceptionHandling.DuplicateUserNameException;
 import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
-import org.micap.common.entity.Function;
-import org.micap.common.entity.User;
+import org.micap.common.entity.*;
 import org.micap.user_management.dto.UserDto;
 import org.micap.user_management.repository.UserDaoMongoImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,20 +50,30 @@ public class UserService {
     }
 
     public Mono<ServerResponse> createUser(ServerRequest serverRequest){
-        return serverRequest.bodyToMono(User.class).flatMap(
+        return serverRequest.bodyToMono(UserDto.class).flatMap(
                 user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
                         .count()
                         .flatMap(
                                 size -> size>0?
                                         Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())):
-                                        AppResponse.AppResponseOkMono(userDaoImp.createUser(
-                                                user.newAudit()
-                                                .setAccount(
-                                                        user.getAccount()
-                                                        .setRoles(new String[]{"USER"})
-                                                        .setFunctions(new Function[]{})
+                                        userDaoImp.createUser(
+                                                new User(
+                                                    new ObjectId().toString(),
+                                                        user.getFirstName(),
+                                                        user.getLastName(),
+                                                        user.getBirthDate(),
+                                                        user.getGender(),
+                                                        new Account(
+                                                                user.getAccount().getEmail(),
+                                                                user.getAccount().getPasssword(),
+                                                                user.getAccount().getUserName(),
+                                                                new String[]{"USER"},
+                                                                new Function[]{}
+                                                        ),
+                                                        null
                                                 )
-                                        ).map(e->"registered user"))
+                                                .newAudit()
+                                        ).flatMap(gg->AppResponse.AppResponseOk())
                         )
         ).onErrorResume(e->AppResponse.AppResponseError(e));
     }

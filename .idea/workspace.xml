@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f481908c-ddb8-4c58-9f09-3d88f3cc69a8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Curso.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Libreto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/MicroLesson.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Tracking.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Account.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Account.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Audit.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Audit.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Function.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Function.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Movies.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/UserMovieDetail.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/UserMovieDetail.java" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/micap/common/enums/CategoryMovie.java" afterPath="$PROJECT_DIR$/common/src/main/java/org/micap/common/enums/CategoryMicroLesson.java" />
+      <change beforePath="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" afterPath="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" />
+      <change beforePath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/UserDto.java" afterPath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/UserDto.java" />
+      <change beforePath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongo.java" afterPath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongo.java" />
+      <change beforePath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java" afterPath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java" />
+      <change beforePath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java" afterPath="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/user_manage/target/" />
     <ignored path="$PROJECT_DIR$/microlecsson_management/target/" />
@@ -23,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LoginService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/service/LoginService.java">
+      <file leaf-file-name="UserMovieDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/UserMovieDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="257">
+              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,31 +51,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginDaoMongoImp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/repository/LoginDaoMongoImp.java">
+      <file leaf-file-name="MicroLesson.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/MicroLesson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="47" />
+            <state relative-caret-position="467">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Curso.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Curso.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/controller/RoleController.java">
+      <file leaf-file-name="Tracking.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Tracking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MicrolecssonManagementApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/microlecsson_management/src/main/java/org/micap/microlecsson_management/MicrolecssonManagementApplication.java">
+      <file leaf-file-name="UserDaoMongoImp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="299">
+              <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+              <folding>
+                <element signature="e#4281#4282#0" expanded="true" />
+                <element signature="e#4334#4335#0" expanded="true" />
+                <element signature="e#4395#4396#0" expanded="true" />
+                <element signature="e#4450#4451#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="72" column="60" lean-forward="false" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CorsConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="34" column="77" lean-forward="true" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -68,63 +121,33 @@
       <file leaf-file-name="UserManagementApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleManagementApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/RoleManagementApplication.java">
+      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="197">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginManagementApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="93">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#731#732#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
+                <element signature="e#2079#2080#0" expanded="true" />
+                <element signature="e#2136#2137#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/Controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="39" column="67" lean-forward="true" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-dev.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_management/src/main/resources/application-dev.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,6 +160,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>userDt</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,16 +182,10 @@
         <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/dto/LoginDto.java" />
         <option value="$PROJECT_DIR$/common/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/DuplicateUserNameException.java" />
-        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDao.java" />
         <option value="$PROJECT_DIR$/user_management/src/main/resources/application-dev.properties" />
         <option value="$PROJECT_DIR$/user_management/src/main/resources/application-prd.properties" />
         <option value="$PROJECT_DIR$/user_management/src/main/resources/application-tst.properties" />
-        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java" />
-        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Audit.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/security/Jwt.java" />
-        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java" />
         <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/Controller/UserController.java" />
         <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/CorsConfiguration.java" />
         <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/repository/LoginDaoMongo.java" />
@@ -176,8 +198,26 @@
         <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java" />
         <option value="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/service/RoleService.java" />
         <option value="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/RoleManagementApplication.java" />
+        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongo.java" />
+        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/UserDto.java" />
+        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDao.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Account.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Audit.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Function.java" />
+        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Libreto.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/UserMovieDetail.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/enums/CategoryMovie.java" />
+        <option value="$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Curso.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Movies.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/MicroLesson.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Tracking.java" />
+        <option value="$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java" />
       </list>
     </option>
   </component>
@@ -249,8 +289,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,25 +299,51 @@
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="role_management" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="role_management" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="role_management" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="role_management" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -287,17 +351,29 @@
             <path>
               <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
-              <item name="role_management" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="role_management" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectoMicap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectoMicap" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user_management" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -309,7 +385,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelWidth1" value="75" />
@@ -317,6 +393,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/common/src/main/java/org/micap/common/entity" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -348,7 +425,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LoginManagementApplication">
+  <component name="RunManager" selected="Spring Boot.UserManagementApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -422,18 +499,6 @@
       <module name="common" />
       <envs />
     </configuration>
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
-      <module name="demo" />
-      <envs />
-    </configuration>
-    <configuration name="LoginManageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.micap.login_manage.LoginManageApplication" />
-      <module name="login_manage" />
-      <envs />
-    </configuration>
     <configuration name="LoginManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.micap.login_management.LoginManagementApplication" />
@@ -448,12 +513,6 @@
       <option name="ACTIVE_PROFILES" value="dev" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="microlecsson_management" />
-      <envs />
-    </configuration>
-    <configuration name="RoleManageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.micap.role_manage.RoleManageApplication" />
-      <module name="role_manage" />
       <envs />
     </configuration>
     <configuration name="RoleManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -503,16 +562,13 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="9">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.MicrolecssonManagementApplication" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.RoleManagementApplication" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.UserManagementApplication" />
       <item index="3" class="java.lang.String" itemvalue="Spring Boot.LoginManagementApplication" />
-      <item index="4" class="java.lang.String" itemvalue="Spring Boot.CommonApplication" />
-      <item index="5" class="java.lang.String" itemvalue="Spring Boot.DemoApplication" />
-      <item index="6" class="java.lang.String" itemvalue="Spring Boot.LoginManageApplication" />
-      <item index="7" class="java.lang.String" itemvalue="Spring Boot.RoleManageApplication" />
-      <item index="8" class="java.lang.String" itemvalue="Application.main" />
+      <item index="4" class="java.lang.String" itemvalue="Application.main" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.CommonApplication" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -537,12 +593,13 @@
       <workItem from="1522169105562" duration="2594000" />
       <workItem from="1522171809878" duration="40000" />
       <workItem from="1522172082235" duration="727000" />
-      <workItem from="1522173173368" duration="14138000" />
+      <workItem from="1522173173368" duration="22962000" />
+      <workItem from="1522261065260" duration="9962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23418000" />
+    <option name="totallyTimeSpent" value="42204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,32 +616,33 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296328" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -600,126 +658,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/LoginManageApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="55" lean-forward="false" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_manage/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/role_manage/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/microlecsson_management/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_manage/src/main/java/org/micap/login_manage/LoginManageApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/dto/LoginDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_management/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_manage/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="32" column="55" lean-forward="false" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_manage/src/main/java/org/micap/user_manage/UserManageApplication.java" />
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="104" lean-forward="false" selection-start-line="2" selection-start-column="104" selection-end-line="2" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/ExceptionHandling/DuplicateUserNameException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -728,21 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="46" lean-forward="false" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_management/src/main/resources/application-prd.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,49 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/AccountDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="99" column="37" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Audit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,9 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="86" lean-forward="false" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,22 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#2150#2151#0" expanded="false" />
-            <element signature="e#2207#2208#0" expanded="false" />
-            <element signature="e#2247#2248#0" expanded="false" />
-            <element signature="e#2311#2312#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -841,9 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,14 +717,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/CorsConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/CorsConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -870,24 +725,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
           <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -911,9 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,38 +754,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/microlecsson_management/src/main/java/org/micap/microlecsson_management/MicrolecssonManagementApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/microlecsson_management/src/main/java/org/micap/microlecsson_management/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/Controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="39" column="67" lean-forward="true" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/microlecsson_management/src/main/java/org/micap/microlecsson_management/main.java" />
     <entry file="file://$PROJECT_DIR$/user_management/src/main/resources/application-dev.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -961,45 +770,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/repository/LoginDaoMongoImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/RoleManagementApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <caret line="65" column="47" lean-forward="false" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1007,6 +784,474 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/microlecsson_management/src/main/java/org/micap/microlecsson_management/MicrolecssonManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role_management/src/main/java/org/micap/role_management/RoleManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="e#777#778#0" expanded="false" />
+            <element signature="e#821#822#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/Controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/AccountDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/dto/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/config/AppResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="86" column="18" lean-forward="true" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-common">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-common</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-common</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="66.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://SpringLocalModels/module=common">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>SpringLocalModels</ID>
+          <OriginalElement>module=common</OriginalElement>
+          <nodes>
+            <node x="" y="">module=common</node>
+            <node x="" y="">fileset=common/CommonApplication</node>
+            <node x="" y="">org.micap.common.CommonApplication</node>
+            <node x="" y="">org.springframework.boot.autoconfigure.SpringBootApplication</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="365.0" y="10.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Show filesets as groups</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/org.micap.common.entity">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>org.micap.common.entity</OriginalElement>
+          <nodes>
+            <node x="-348.0" y="241.0">org.micap.common.entity.User</node>
+            <node x="116.0" y="222.0">org.micap.common.entity.Role</node>
+            <node x="0.0" y="148.0">org.micap.common.entity.Movies</node>
+            <node x="0.0" y="74.0">org.micap.common.entity.Function</node>
+            <node x="140.0" y="74.0">org.micap.common.entity.Account</node>
+            <node x="0.0" y="0.0">org.micap.common.entity.UserMovieDetail</node>
+            <node x="131.0" y="148.0">org.micap.common.entity.Audit</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-337.0" y="83.0" />
+          <SelectedNodes>
+            <node>org.micap.common.entity.User</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/org.micap.common.entity.User">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>org.micap.common.entity.User</OriginalElement>
+          <nodes>
+            <node x="" y="">org.micap.common.entity.User</node>
+            <node x="" y="">lombok.Getter</node>
+            <node x="" y="">org.micap.common.entity.Account</node>
+            <node x="" y="">lombok.ToString</node>
+            <node x="" y="">lombok.AllArgsConstructor</node>
+            <node x="" y="">org.springframework.data.mongodb.core.mapping.Document</node>
+            <node x="" y="">lombok.NoArgsConstructor</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="329.0" y="79.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/org.micap.common.entity.Account">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>org.micap.common.entity.Account</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">lombok.Getter</node>
+            <node x="290.0" y="148.0">org.micap.common.entity.Account</node>
+            <node x="564.0" y="0.0">lombok.ToString</node>
+            <node x="100.0" y="0.0">lombok.AllArgsConstructor</node>
+            <node x="440.0" y="0.0">org.springframework.data.mongodb.core.mapping.Document</node>
+            <node x="269.0" y="0.0">lombok.NoArgsConstructor</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.micap.common.entity.Account" target="org.springframework.data.mongodb.core.mapping.Document">
+              <point x="18.600000000000023" y="-14.5" />
+              <point x="363.1" y="49.0" />
+              <point x="492.0" y="49.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="org.micap.common.entity.Account" target="lombok.NoArgsConstructor">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="org.micap.common.entity.Account" target="lombok.Getter">
+              <point x="-37.19999999999999" y="-14.5" />
+              <point x="307.3" y="59.0" />
+              <point x="40.0" y="59.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="org.micap.common.entity.Account" target="lombok.AllArgsConstructor">
+              <point x="-18.600000000000023" y="-14.5" />
+              <point x="325.9" y="49.0" />
+              <point x="174.5" y="49.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="org.micap.common.entity.Account" target="lombok.ToString">
+              <point x="37.19999999999999" y="-14.5" />
+              <point x="381.7" y="59.0" />
+              <point x="610.5" y="59.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-125.0" y="12.0" />
+          <SelectedNodes>
+            <node>org.micap.common.entity.Account</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/D:/bitbucket/ProjectoMicap/common/src/main/java/org/micap/common/entity">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/common/src/main/java/org/micap/common/entity</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/org.micap.common.ExceptionHandling.AuthorizationException">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>org.micap.common.ExceptionHandling.AuthorizationException</OriginalElement>
+          <nodes>
+            <node x="33.5" y="79.0">java.lang.Throwable</node>
+            <node x="24.0" y="158.0">org.micap.common.ExceptionHandling.BaseException</node>
+            <node x="0.0" y="237.0">org.micap.common.ExceptionHandling.AuthorizationException</node>
+            <node x="32.5" y="0.0">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.micap.common.ExceptionHandling.AuthorizationException" target="org.micap.common.ExceptionHandling.BaseException">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="org.micap.common.ExceptionHandling.BaseException" target="java.lang.Throwable">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="java.lang.Throwable" target="java.io.Serializable">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-368.0" y="91.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/gg.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="433.4821428571428" y="344.0">org.micap.common.entity.User</node>
+            <node x="0.0" y="366.0">org.micap.common.entity.MicroLesson</node>
+            <node x="277.19047619047615" y="145.0">org.micap.common.entity.Account</node>
+            <node x="671.1904761904761" y="156.0">org.micap.common.entity.Audit</node>
+            <node x="474.19047619047615" y="167.0">org.micap.common.entity.Role</node>
+            <node x="367.10714285714283" y="0.0">org.micap.common.entity.Function</node>
+            <node x="78.75" y="167.0">org.micap.common.entity.UserMovieDetail</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.micap.common.entity.Role" target="org.micap.common.entity.Function">
+              <point x="-44.25" y="-47.5" />
+              <point x="518.4404761904761" y="120.0" />
+              <point x="490.85714285714283" y="120.0" />
+              <point x="24.75" y="47.5" />
+            </edge>
+            <edge source="org.micap.common.entity.User" target="org.micap.common.entity.Account">
+              <point x="-21.333333333333314" y="-102.5" />
+              <point x="540.1488095238095" y="304.0" />
+              <point x="409.94047619047615" y="304.0" />
+              <point x="44.25" y="69.5" />
+            </edge>
+            <edge source="org.micap.common.entity.User" target="org.micap.common.entity.Audit">
+              <point x="106.66666666666663" y="-102.5" />
+              <point x="668.1488095238094" y="324.0" />
+              <point x="880.3571428571429" y="324.0" />
+              <point x="83.66666666666669" y="58.5" />
+            </edge>
+            <edge source="org.micap.common.entity.User" target="org.micap.common.entity.UserMovieDetail">
+              <point x="-106.66666666666663" y="-102.5" />
+              <point x="454.81547619047615" y="324.0" />
+              <point x="210.0" y="324.0" />
+              <point x="43.75" y="47.5" />
+            </edge>
+            <edge source="org.micap.common.entity.Account" target="org.micap.common.entity.Function">
+              <point x="-44.25" y="-69.5" />
+              <point x="321.44047619047615" y="120.0" />
+              <point x="391.85714285714283" y="120.0" />
+              <point x="-74.25" y="47.5" />
+            </edge>
+            <edge source="org.micap.common.entity.MicroLesson" target="org.micap.common.entity.UserMovieDetail">
+              <point x="0.0" y="-80.5" />
+              <point x="-43.75" y="47.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-189.0" y="259.0" />
+          <SelectedNodes>
+            <node>org.micap.common.entity.User</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Libreto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/enums/CategoryMicroLesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Audit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_management/src/main/java/org/micap/login_management/LoginManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/UserMovieDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/repository/UserDaoMongoImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding>
+            <element signature="e#4281#4282#0" expanded="true" />
+            <element signature="e#4334#4335#0" expanded="true" />
+            <element signature="e#4395#4396#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/config/CorsConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="34" column="77" lean-forward="true" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/UserManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Curso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/MicroLesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/Tracking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/org/micap/common/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2079#2080#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_management/src/main/java/org/micap/user_management/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="72" column="60" lean-forward="false" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -1092,5 +1337,55 @@
     <option value="$PROJECT_DIR$/user_manage" />
     <option value="maven clean build" />
     <option value="maven clean" />
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
   </component>
 </project>

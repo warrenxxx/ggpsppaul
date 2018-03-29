@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.bson.types.ObjectId;
-import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**

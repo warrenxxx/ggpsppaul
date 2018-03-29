@@ -86,4 +86,11 @@ public class AppResponse {
                         ,AppResponse.class
                 );
     }
+    public static Mono<ServerResponse> AppResponseOk(){
+        return ok()
+                .body(
+                        Mono.just(new AppResponse(Map.of("message","successful operation"),null))
+                        ,AppResponse.class
+                );
+    }
 }

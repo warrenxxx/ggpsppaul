@@ -1,7 +1,6 @@
 package org.micap.common.entity;
 
 import lombok.*;
-import org.bson.types.ObjectId;
 import org.micap.common.enums.Methods;
 import org.springframework.data.mongodb.core.mapping.Document;
 

@@ -18,18 +18,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode
 
 public class UserMovieDetail {
-    public String _id;
+    public String _idMovie;
     public Long timeResume;
     public Boolean isComplete;
+    public Long calification;
 
     /**
      * Sets the _id.
      *
-     * @param _id the _id to set
+     * @param _idMovie the _id to set
      * @return UserMovieDetail
      */
-    public UserMovieDetail set_id(String _id) {
-        this._id = _id;
+    public UserMovieDetail set_id(String _idMovie) {
+        this._idMovie = _idMovie;
         return this;
     }
 
