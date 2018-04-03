@@ -1,21 +1,32 @@
 package org.micap.user_management.repository;
 
+import com.mongodb.BasicDBObject;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.micap.common.entity.Account;
 import org.micap.common.entity.Function;
 import org.micap.common.entity.User;
 import org.micap.user_management.dto.AccountDto;
+import org.micap.user_management.dto.AllUserDto;
 import org.micap.user_management.dto.UserDto;
 import org.micap.user_management.dto.UserWithoutPasswordDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationOperation;
+import org.springframework.data.mongodb.core.aggregation.ArithmeticOperators;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Arrays;
+import java.util.Date;
+
+import static java.lang.Math.floor;
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 /**
@@ -35,14 +46,16 @@ public class UserDaoMongoImp implements UserDao {
     @Autowired
     public ReactiveMongoOperations reactiveMongoOperations;
 
-
-
     @Override
-    public Flux<UserDto> getUsers(){
+    public Flux<AllUserDto> getUsers(){
+        ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04);
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                Aggregation.project("firstName","lastName","birthDate","gender","account")
+                Aggregation.project("_id","firstName","lastName","gender")
                         .and("account.roles").size().as("roleCount")
-        ),"user",UserDto.class);
+                        .and("account.email").as("email")
+                        .and("account.userName").as("userName")
+                        .and(updated).as("age")
+        ),"user",AllUserDto.class).map(e->e.setAge( floor((Double) e.getAge())));
     }
 
     @Override
@@ -92,31 +105,13 @@ public class UserDaoMongoImp implements UserDao {
     @Override
     public Mono<UserDto> createUser(User user) {
         return this.userDaoMongo.insert(user)
-                .map(e->new UserDto(
-                        e.get_id(),
-                        e.getFirstName(),
-                        e.getLastName(),
-                        e.getBirthDate(),
-                        e.getGender(),
-                        new AccountDto().setEmail(e.getAccount().getEmail())
-                                        .setUserName(e.getAccount().getUserName()),
-                        0l
-                ));
+                .map(e->new UserDto());
     }
 
     @Override
     public Mono<UserDto> updateUser(User user) {
         return this.userDaoMongo.save(user)
-                .map(e->new UserDto(
-                        e.get_id(),
-                        e.getFirstName(),
-                        e.getLastName(),
-                        e.getBirthDate(),
-                        e.getGender(),
-                        new AccountDto().setEmail(e.getAccount().getEmail())
-                                .setUserName(e.getAccount().getUserName()),
-                        0l
-                ));
+                .map(e->new UserDto());
     }
 
 

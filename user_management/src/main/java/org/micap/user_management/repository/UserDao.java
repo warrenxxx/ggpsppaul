@@ -3,6 +3,7 @@ package org.micap.user_management.repository;
 import org.micap.common.entity.Function;
 import org.micap.common.entity.User;
 import org.micap.user_management.dto.AccountDto;
+import org.micap.user_management.dto.AllUserDto;
 import org.micap.user_management.dto.UserDto;
 import org.micap.user_management.dto.UserWithoutPasswordDto;
 import reactor.core.publisher.Flux;
@@ -16,7 +17,7 @@ import reactor.core.publisher.Mono;
  * @since :19/03/2018
  */
 public interface UserDao {
-    public Flux<UserDto> getUsers();
+    public Flux<AllUserDto> getUsers();
     public Mono<UserWithoutPasswordDto> getUser(String id);
     public Flux<AccountDto> getUsersbyUsername(String userName);
     public Mono<User> getUser(String username, String password);

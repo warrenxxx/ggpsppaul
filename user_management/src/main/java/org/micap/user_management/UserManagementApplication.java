@@ -25,7 +25,9 @@ public class UserManagementApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(UserDaoMongoImp userDaoMongoImp){
 		return args -> {
-			System.out.println(userDaoMongoImp.getUsers().collectList().block());
+			System.out.println(
+					userDaoMongoImp.getUsers().collectList().block()
+			);
 		};
 	}
 }
