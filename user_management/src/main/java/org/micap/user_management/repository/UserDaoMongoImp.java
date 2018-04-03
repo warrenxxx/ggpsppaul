@@ -41,6 +41,7 @@ public class UserDaoMongoImp implements UserDao {
     public Flux<UserDto> getUsers(){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 Aggregation.project("firstName","lastName","birthDate","gender","account")
+                        .and("account.roles").size().as("roleCount")
         ),"user",UserDto.class);
     }
 
@@ -48,6 +49,7 @@ public class UserDaoMongoImp implements UserDao {
     public Mono<UserWithoutPasswordDto> getUser(String id){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 Aggregation.match(Criteria.where("_id").is(new ObjectId(id)))
+//                , project("_id","").and("account.roles").size().as("roleCount")
         ),"user",UserWithoutPasswordDto.class).publishNext();
     }
 
@@ -97,7 +99,8 @@ public class UserDaoMongoImp implements UserDao {
                         e.getBirthDate(),
                         e.getGender(),
                         new AccountDto().setEmail(e.getAccount().getEmail())
-                                        .setUserName(e.getAccount().getUserName())
+                                        .setUserName(e.getAccount().getUserName()),
+                        0l
                 ));
     }
 
@@ -111,7 +114,8 @@ public class UserDaoMongoImp implements UserDao {
                         e.getBirthDate(),
                         e.getGender(),
                         new AccountDto().setEmail(e.getAccount().getEmail())
-                                .setUserName(e.getAccount().getUserName())
+                                .setUserName(e.getAccount().getUserName()),
+                        0l
                 ));
     }
 

@@ -29,6 +29,7 @@ public class UserDto {
     private LocalDate birthDate;
     private Sexo gender;
     private AccountDto account;
+    private Long roleCount;
 
     public UserDto(User user){
         this._id=user.get_id();

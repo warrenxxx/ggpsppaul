@@ -18,4 +18,5 @@ public class AccountWithoutPasswordDto {
     private String userName;
     private String roles[];
     private Function functions[];
+
 }
