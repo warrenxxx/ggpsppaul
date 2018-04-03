@@ -48,14 +48,16 @@ public class UserDaoMongoImp implements UserDao {
 
     @Override
     public Flux<AllUserDto> getUsers(){
-        ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04);
+        ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 Aggregation.project("_id","firstName","lastName","gender")
                         .and("account.roles").size().as("roleCount")
                         .and("account.email").as("email")
                         .and("account.userName").as("userName")
                         .and(updated).as("age")
-        ),"user",AllUserDto.class).map(e->e.setAge( floor((Double) e.getAge())));
+        ),"user",AllUserDto.class).map(e->e.setAge( floor((Double) e.getAge()))
+
+        );
     }
 
     @Override
