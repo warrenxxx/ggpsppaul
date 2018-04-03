@@ -6,6 +6,7 @@ import org.micap.common.entity.Function;
 import org.micap.common.entity.User;
 import org.micap.user_management.dto.AccountDto;
 import org.micap.user_management.dto.UserDto;
+import org.micap.user_management.dto.UserWithoutPasswordDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
@@ -44,11 +45,10 @@ public class UserDaoMongoImp implements UserDao {
     }
 
     @Override
-    public Mono<UserDto> getUser(String id){
+    public Mono<UserWithoutPasswordDto> getUser(String id){
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
-                Aggregation.project("firstName","lastName","birthDate","gender","account")
-        ),"user",UserDto.class).map(e->e.setIdToString()).publishNext();
+                Aggregation.match(Criteria.where("_id").is(new ObjectId(id)))
+        ),"user",UserWithoutPasswordDto.class).publishNext();
     }
 
     @Override

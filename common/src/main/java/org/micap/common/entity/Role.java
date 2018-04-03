@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Role {
     public String _id;
-    public String descripcion;
+    public String description;
     public Function functions[];
 
     /**
@@ -33,7 +33,7 @@ public class Role {
      * @return Role
      */
     public Role setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        this.description = descripcion;
         return this;
     }
 

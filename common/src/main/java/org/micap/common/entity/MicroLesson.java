@@ -19,7 +19,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @EqualsAndHashCode
 
-public class MicroLesson extends UserMovieDetail {
+public class MicroLesson{
     private String _id;
     private String titulo;
 

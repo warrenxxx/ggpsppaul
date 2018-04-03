@@ -4,6 +4,7 @@ import org.micap.common.entity.Function;
 import org.micap.common.entity.User;
 import org.micap.user_management.dto.AccountDto;
 import org.micap.user_management.dto.UserDto;
+import org.micap.user_management.dto.UserWithoutPasswordDto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -16,7 +17,7 @@ import reactor.core.publisher.Mono;
  */
 public interface UserDao {
     public Flux<UserDto> getUsers();
-    public Mono<UserDto> getUser(String id);
+    public Mono<UserWithoutPasswordDto> getUser(String id);
     public Flux<AccountDto> getUsersbyUsername(String userName);
     public Mono<User> getUser(String username, String password);
     public Flux<Function> getFunctions(String id);
