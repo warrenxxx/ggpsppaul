@@ -24,7 +24,9 @@ public class LoginManagementApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(LoginDaoMongoImp loginDaoMongoImp){
 		return args -> {
-			loginDaoMongoImp.getUserDto(new LoginDto("test2","123456")).defaultIfEmpty(new UserDto().setEmail("ff")).subscribe(System.out::print);
+			System.out.println(
+
+			);
 		};
 	}
 }

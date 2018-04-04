@@ -1,11 +1,23 @@
 package org.micap.role_management.repository;
 
+import lombok.Data;
+import lombok.ToString;
+import org.bson.types.ObjectId;
+import org.micap.common.entity.Function;
 import org.micap.common.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 /**
  * The RoleDaoImp class is implemment to
@@ -51,4 +63,18 @@ public class RoleDaoImp implements RoleDao{
         return roleDaoMongo.existsById(id);
     }
 
+    public Mono<dto> llamada(String id){
+        return  reactiveMongoOperations.aggregate(Aggregation.newAggregation(
+                match(where("_id").is(id)),
+                project("functions")
+         ),"role",dto.class).publishNext();
+    }
+
+}
+@Document
+@Data
+@ToString
+class dto{
+    private String _id;
+    private Function functions[];
 }
