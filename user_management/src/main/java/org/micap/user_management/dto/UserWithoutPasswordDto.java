@@ -30,7 +30,12 @@ public class UserWithoutPasswordDto {
     private LocalDate birthDate;
     private Sexo gender;
     private AccountWithoutPasswordDto account;
+    private Object age;
 
+    public UserWithoutPasswordDto setAge(Object age) {
+        this.age = age;
+        return this;
+    }
 
     /**
      * Sets the _id.

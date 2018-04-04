@@ -62,10 +62,14 @@ public class UserDaoMongoImp implements UserDao {
 
     @Override
     public Mono<UserWithoutPasswordDto> getUser(String id){
+        ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                Aggregation.match(Criteria.where("_id").is(new ObjectId(id)))
+                Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
+                        project("_id","firstName","lastName","birthDate","gender","account")
+                            .and(updated).as("age")
+
 //                , project("_id","").and("account.roles").size().as("roleCount")
-        ),"user",UserWithoutPasswordDto.class).publishNext();
+        ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext();
     }
 
     @Override
