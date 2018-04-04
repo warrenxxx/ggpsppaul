@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import static org.micap.common.security.Jwt.verifyFunctions;
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 import static org.springframework.web.reactive.function.server.RequestPredicates.path;
@@ -27,30 +28,36 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Controller
 public class RoleController {
     private static final String ROLE="/role";
+    private static final String AUTH="ROLE";
 
     @Bean
     protected RouterFunction<ServerResponse> getRoutingFunction(RoleService roleService) {
-        return nest(path(ROLE),
+        return
+        nest(path(ROLE),
                 route(
                         GET("/")        , Req -> roleService.getRoles(Req)
                 ).andRoute(
                         GET("/{id}")    , Req -> roleService.getRole(Req)
-                ).filter((req,next)->{
+                )
+                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
 
-                    return next.handle(req).doOnError(e->{
-
-                    });
-                })
         ).andNest(path(ROLE),
                 route(
                         PUT("/")        , Req -> roleService.modifyRole(Req)
                 ).andRoute(
                         DELETE("/{id}") , Req -> roleService.removerole(Req)
                 )
+                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+        ).andNest(path(ROLE),
+                route(
+                        DELETE("/{id}") , Req -> roleService.removerole(Req)
+                )
+                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
         ).andNest(path(ROLE),
                 route(
                         POST("/")       , Req -> roleService.createRole(Req)
                 )
+                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
         );
     }
 }

@@ -1,15 +1,17 @@
 package org.micap.user_management.repository;
 
 import com.mongodb.BasicDBObject;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.micap.common.entity.Account;
 import org.micap.common.entity.Function;
 import org.micap.common.entity.User;
-import org.micap.user_management.dto.AccountDto;
-import org.micap.user_management.dto.AllUserDto;
-import org.micap.user_management.dto.UserDto;
-import org.micap.user_management.dto.UserWithoutPasswordDto;
+import org.micap.common.enums.Sexo;
+import org.micap.user_management.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
@@ -60,17 +62,7 @@ public class UserDaoMongoImp implements UserDao {
         );
     }
 
-    @Override
-    public Mono<UserWithoutPasswordDto> getUser(String id){
-        ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
-        return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
-                        project("_id","firstName","lastName","birthDate","gender","account")
-                            .and(updated).as("age")
 
-//                , project("_id","").and("account.roles").size().as("roleCount")
-        ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext();
-    }
 
     @Override
     public Flux<AccountDto> getUsersbyUsername(String userName){
@@ -135,5 +127,52 @@ public class UserDaoMongoImp implements UserDao {
     public Mono<Boolean> existById(String id) {
         return this.userDaoMongo.existsById(id);
     }
+    @Override
+    public Mono<UserWithoutPasswordDto> getUser(String id){
+        ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
+        System.out.println(
+                Aggregation.newAggregation(
+                        Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
+                        unwind("account.roles"),
+                        lookup("role","account.roles","_id","account.roles"),
+                        unwind("account.roles"),
+                        group( "_id")
+                                .first("firstName").as("firstName")
+                                .first("lastName").as("lastName")
+                                .first("birthDate").as("birthDate")
+                                .first("gender").as("gender")
+                                .first("account").as("account")
+                                .push("account.roles").as("roles"),
 
+                        project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
+                                .and(updated).as("age")
+
+
+                ).toString()
+        );
+        return reactiveMongoOperations.aggregate(
+                Aggregation.newAggregation(
+                Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
+                unwind("account.roles"),
+                lookup("role","account.roles","_id","account.roles"),
+                unwind("account.roles"),
+                group( "_id")
+                        .first("firstName").as("firstName")
+                        .first("lastName").as("lastName")
+                        .first("birthDate").as("birthDate")
+                        .first("gender").as("gender")
+                        .first("account").as("account")
+                        .push("account.roles").as("roles"),
+
+                project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
+                        .and(updated).as("age")
+                        .and("roles").as("account.roles")
+                        .and("account.email").as("account.email")
+                        .and("account.userName").as("account.userName")
+                        .and("account.functions").as("account.functions")
+
+
+
+        ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext();
+    }
 }

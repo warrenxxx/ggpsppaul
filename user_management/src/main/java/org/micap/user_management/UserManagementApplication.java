@@ -28,9 +28,9 @@ public class UserManagementApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(UserDaoMongo userDaoMongo){
+	public CommandLineRunner commandLineRunner(UserDaoMongoImp userDaoMongo){
 		return args -> {
-//		    userDaoMongo.insert(new User().setBirthDate(LocalDate.now()).setGender(Sexo.MASCULINO)).subscribe(System.out::print);
+					userDaoMongo.getUser("5ac4fb72a9641d307475cc35").subscribe(System.out::println,System.out::println,System.out::println);
 		};
 	}
 }

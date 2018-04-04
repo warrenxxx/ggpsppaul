@@ -25,7 +25,7 @@ public class LoginController {
     RouterFunction<ServerResponse> Route(LoginService loginService) {
         return nest(path(RUTE),
                 route(
-                        POST("/")        , Req -> loginService.login(Req)
+                        POST("/")        , loginService::login
                 )
         );
     }

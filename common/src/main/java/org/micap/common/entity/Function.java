@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Function {
     public String _id;
     public String entity;
-    public Methods crudMethods[];
+    public String crudMethods[];
 
     /**
      * Sets the _id.
@@ -44,7 +44,7 @@ public class Function {
      * @param crudMethods the crudMethods to set
      * @return Function
      */
-    public Function setCrudMethods(Methods[] crudMethods) {
+    public Function setCrudMethods(String[] crudMethods) {
         this.crudMethods = crudMethods;
         return this;
     }

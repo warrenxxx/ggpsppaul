@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class AccountWithoutPasswordDto {
     private String email;
     private String userName;
-    private String roles[];
+    private Role roles[];
     private Function functions[];
 
 }

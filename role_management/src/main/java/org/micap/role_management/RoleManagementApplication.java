@@ -23,6 +23,7 @@ public class RoleManagementApplication {
 	public WebFilter corsFilter(){
 		return CorsConfiguration.corsFilter();
 	}
+	/*
 	@Bean
 	CommandLineRunner commandLineRunner(RoleDaoMongo roleDaoMongo){
 		return args -> {
@@ -46,12 +47,6 @@ public class RoleManagementApplication {
 				roleDaoMongo.insert(r2).subscribe(System.out::println);
 			});
 		};
-	}
-	CommandLineRunner commandLineRunner2(RoleDaoImp roleDaoImp){
-		return args -> {
-			System.out.println(
-					roleDaoImp.llamada("ADMIN").block()
-			);
-		};
-	}
+	}*/
+
 }

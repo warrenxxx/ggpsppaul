@@ -63,18 +63,6 @@ public class RoleDaoImp implements RoleDao{
         return roleDaoMongo.existsById(id);
     }
 
-    public Mono<dto> llamada(String id){
-        return  reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                match(where("_id").is(id)),
-                project("functions")
-         ),"role",dto.class).publishNext();
-    }
 
 }
-@Document
-@Data
-@ToString
-class dto{
-    private String _id;
-    private Function functions[];
-}
+
