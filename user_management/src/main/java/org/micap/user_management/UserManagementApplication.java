@@ -30,7 +30,7 @@ public class UserManagementApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(UserDaoMongo userDaoMongo){
 		return args -> {
-		    userDaoMongo.insert(new User().setBirthDate(LocalDate.now()).setGender(Sexo.MASCULINO)).subscribe(System.out::print);
+//		    userDaoMongo.insert(new User().setBirthDate(LocalDate.now()).setGender(Sexo.MASCULINO)).subscribe(System.out::print);
 		};
 	}
 }
