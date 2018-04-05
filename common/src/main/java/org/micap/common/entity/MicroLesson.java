@@ -1,7 +1,6 @@
 package org.micap.common.entity;
 
 import lombok.*;
-import org.micap.common.enums.CategoryMicroLesson;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -25,8 +24,7 @@ public class MicroLesson{
 
     private String location;
 
-    private CategoryMicroLesson categoryMovies[];
-
+    private String categoryMovies[];
 
     private Long duration;
     private String descriptcion;
@@ -37,7 +35,4 @@ public class MicroLesson{
     private Audit audit;
 
     private String  idCursos[];
-
-
-
 }

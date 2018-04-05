@@ -20,7 +20,6 @@ public class VaribleManagementApplication {
 			variableDaoMongo.deleteAll().subscribe(null,null,()->{
 				variableDaoMongo.insert(
 						new Variable(
-								new ObjectId().toString(),
 								"GENDER",
 								"These are the genres considered to be registered",
 								new String[]{
@@ -31,7 +30,6 @@ public class VaribleManagementApplication {
 				).subscribe(System.out::print);
 				variableDaoMongo.insert(
 						new Variable(
-								new ObjectId().toString(),
 								"METHODS",
 								"These are the mothods used to determinate the crud operations",
 								new String[]{

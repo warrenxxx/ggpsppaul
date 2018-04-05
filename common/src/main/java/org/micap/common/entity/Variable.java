@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Variable {
     private String _id;
-    private String name;
+
     private String description;
     private String elements[];
 
@@ -22,10 +22,6 @@ public class Variable {
         return this;
     }
 
-    public Variable setName(String name) {
-        this.name = name;
-        return this;
-    }
 
     public Variable setDescription(String description) {
         this.description = description;

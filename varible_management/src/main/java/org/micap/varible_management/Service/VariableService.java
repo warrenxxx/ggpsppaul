@@ -3,6 +3,7 @@ package org.micap.varible_management.Service;
 import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.config.AppResponse;
 import org.micap.common.entity.Variable;
+import org.micap.varible_management.repository.VariableDao;
 import org.micap.varible_management.repository.VariableDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,12 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class VariableService {
-    @Autowired
-    private VariableDaoImpl variableDao;
+
+    private VariableDao variableDao;
+
+    public VariableService(VariableDaoImpl variableDao) {
+        this.variableDao = variableDao;
+    }
 
     public Mono<ServerResponse> getVariable(ServerRequest request){
         return variableDao

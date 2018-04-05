@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 
 /**
- * The UserDto class is implemment to
+ * The UserLoginDto class is implemment to
  *
  * @version :1.0
  * @Author :warren
@@ -24,12 +24,12 @@ import java.time.LocalDate;
 @Getter
 @ToString
 @Document
-public class UserDto {
+public class UserLoginDto {
     private String _id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
-    private Sexo gender;
+    private String gender;
 
     private String email;
     private String userName;
@@ -41,9 +41,9 @@ public class UserDto {
      * Sets the _id.
      *
      * @param _id the _id to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto set_id(String _id) {
+    public UserLoginDto set_id(String _id) {
         this._id = _id;
         return this;
     }
@@ -52,9 +52,9 @@ public class UserDto {
      * Sets the firstName.
      *
      * @param firstName the firstName to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setFirstName(String firstName) {
+    public UserLoginDto setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -63,9 +63,9 @@ public class UserDto {
      * Sets the lastName.
      *
      * @param lastName the lastName to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setLastName(String lastName) {
+    public UserLoginDto setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -74,9 +74,9 @@ public class UserDto {
      * Sets the birthDate.
      *
      * @param birthDate the birthDate to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setBirthDate(LocalDate birthDate) {
+    public UserLoginDto setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
         return this;
     }
@@ -85,9 +85,9 @@ public class UserDto {
      * Sets the gender.
      *
      * @param gender the gender to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setGender(Sexo gender) {
+    public UserLoginDto setGender(Sexo gender) {
         this.gender = gender;
         return this;
     }
@@ -96,9 +96,9 @@ public class UserDto {
      * Sets the email.
      *
      * @param email the email to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setEmail(String email) {
+    public UserLoginDto setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -107,9 +107,9 @@ public class UserDto {
      * Sets the userName.
      *
      * @param userName the userName to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setUserName(String userName) {
+    public UserLoginDto setUserName(String userName) {
         this.userName = userName;
         return this;
     }
@@ -118,9 +118,9 @@ public class UserDto {
      * Sets the roles.
      *
      * @param roles the roles to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setRoles(Role[] roles) {
+    public UserLoginDto setRoles(Role[] roles) {
         this.roles = roles;
         return this;
     }
@@ -129,9 +129,9 @@ public class UserDto {
      * Sets the functions.
      *
      * @param functions the functions to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setFunctions(Function[] functions) {
+    public UserLoginDto setFunctions(Function[] functions) {
         this.functions = functions;
         return this;
     }
@@ -140,9 +140,9 @@ public class UserDto {
      * Sets the token.
      *
      * @param token the token to set
-     * @return UserDto
+     * @return UserLoginDto
      */
-    public UserDto setToken(String token) {
+    public UserLoginDto setToken(String token) {
         this.token = token;
         return this;
     }

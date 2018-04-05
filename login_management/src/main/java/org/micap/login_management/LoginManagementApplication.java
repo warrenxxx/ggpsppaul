@@ -1,8 +1,6 @@
 package org.micap.login_management;
 
 import org.micap.common.config.CorsConfiguration;
-import org.micap.login_management.dto.LoginDto;
-import org.micap.login_management.dto.UserDto;
 import org.micap.login_management.repository.LoginDaoMongoImp;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

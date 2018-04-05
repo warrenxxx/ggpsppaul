@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import static org.micap.common.security.Jwt.verifyFunctions;
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RequestPredicates.DELETE;
 import static org.springframework.web.reactive.function.server.RequestPredicates.path;
@@ -26,22 +27,22 @@ public class VariableController {
                         ).andRoute(
                                 GET("/{id}")    , service::getVariable
                         )
-  //                              .filter((req,next)->verifyFunctions(req,next,ENTITY+"-GET"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-GET"))
                 ).andNest(path(RUTE),
                         route(
                                 PUT("/")        , service::updateVariable
                         )
-//                                .filter((req,next)->verifyFunctions(req,next,auth+"-PUT"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-PUT"))
                 ).andNest(path(RUTE),
                         route(
                                 POST("/")       , service::createVariable
                         )
-//                                .filter((req,next)->verifyFunctions(req,next,auth+"-PUT"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-PUT"))
                 ).andNest(path(RUTE),
                         route(
                                 DELETE("/{id}") , service::deleteVariableById
                         )
-//                                .filter((req,next)->verifyFunctions(req,next,auth+"-DELETE"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-DELETE"))
                 );
     }
 }

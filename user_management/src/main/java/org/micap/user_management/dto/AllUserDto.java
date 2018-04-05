@@ -2,7 +2,6 @@ package org.micap.user_management.dto;
 
 import lombok.*;
 import org.micap.common.entity.User;
-import org.micap.common.enums.Sexo;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -26,7 +25,7 @@ public class AllUserDto {
     private String _id;
     private String firstName;
     private String lastName;
-    private Sexo gender;
+    private String gender;
     private Long roleCount;
     private Object age;
     private String email;
@@ -106,7 +105,7 @@ public class AllUserDto {
      * @param gender the gender to set
      * @return UserDto
      */
-    public AllUserDto setGender(Sexo gender) {
+    public AllUserDto setGender(String gender) {
         this.gender = gender;
         return this;
     }

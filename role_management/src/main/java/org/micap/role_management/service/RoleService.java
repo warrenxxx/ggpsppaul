@@ -6,8 +6,8 @@ import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
 import org.micap.common.entity.Role;
+import org.micap.role_management.repository.RoleDao;
 import org.micap.role_management.repository.RoleDaoImp;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -19,8 +19,12 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @Service
 
 public class RoleService {
-    @Autowired
-    private RoleDaoImp roleDaoImp;
+
+    private RoleDao roleDaoImp;
+
+    public RoleService(RoleDaoImp roleDaoImp) {
+        this.roleDaoImp = roleDaoImp;
+    }
 
     public Mono<ServerResponse> getRoles(ServerRequest serverRequest){
         return roleDaoImp.getRoles()
@@ -48,16 +52,16 @@ public class RoleService {
 
     public Mono<ServerResponse> modifyRole(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Role.class).flatMap(
-                role->roleDaoImp.roleDaoMongo.existsById(role.get_id())
+                role->roleDaoImp.existById(role.get_id())
                         .flatMap(
-                                existe->existe==true?notFound().build(): ok().body(roleDaoImp.roleDaoMongo.save(role),Role.class)
+                                existe->existe==true?notFound().build(): ok().body(roleDaoImp.CreateRole(role),Role.class)
                         )
         );
     }
     public Mono<ServerResponse> removerole(ServerRequest serverRequest){
-        return roleDaoImp.roleDaoMongo.findById(serverRequest.pathVariable("id"))
+        return roleDaoImp.getRole(serverRequest.pathVariable("id"))
                 .flatMap(
-                        account->ok().build(roleDaoImp.roleDaoMongo.deleteById(serverRequest.pathVariable("id")))
+                        account->ok().build(roleDaoImp.DeleteRoleById(serverRequest.pathVariable("id")))
                 )
                 .switchIfEmpty(notFound().build());
     }

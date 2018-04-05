@@ -1,7 +1,6 @@
 package org.micap.common.entity;
 
 import lombok.*;
-import org.micap.common.enums.Sexo;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -13,17 +12,17 @@ import java.time.LocalDate;
  * @Author :warren
  * @since :17/03/2018
  */
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @ToString
-    @Document
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@ToString
+@Document
 public class User {
     private String _id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
-    private Sexo gender;
+    private String gender;
     private Account account;
     private Audit audit;
 
@@ -78,7 +77,7 @@ public class User {
      * @param gender the gender to set
      * @return User
      */
-    public User setGender(Sexo gender) {
+    public User setGender(String gender) {
         this.gender = gender;
         return this;
     }

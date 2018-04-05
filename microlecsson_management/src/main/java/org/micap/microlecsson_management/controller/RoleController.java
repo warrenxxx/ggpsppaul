@@ -1,4 +1,4 @@
-package org.micap.role_management.controller;
+package org.micap.microlecsson_management.controller;
 
 import org.micap.role_management.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +32,7 @@ public class RoleController {
 
     @Bean
     protected RouterFunction<ServerResponse> getRoutingFunction(RoleService roleService) {
-        return route(
-                POST("/"),Req->roleService.createRole(Req)
-        );
-
-        /*return
+        return
         nest(path(ROLE),
                 route(
                         GET("/")        , Req -> roleService.getRoles(Req)
@@ -62,6 +58,6 @@ public class RoleController {
                         POST("/")       , Req -> roleService.createRole(Req)
                 )
                         .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
-        );*/
+        );
     }
 }

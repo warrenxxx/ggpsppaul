@@ -9,4 +9,5 @@ public class MicrolecssonManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MicrolecssonManagementApplication.class, args);
 	}
+
 }

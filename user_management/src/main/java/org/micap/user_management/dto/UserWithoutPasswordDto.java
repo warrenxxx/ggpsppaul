@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.micap.common.entity.Account;
 import org.micap.common.entity.Audit;
-import org.micap.common.enums.Sexo;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -28,7 +28,7 @@ public class UserWithoutPasswordDto {
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
-    private Sexo gender;
+    private String gender;
     private AccountWithoutPasswordDto account;
     private Object age;
 
@@ -87,7 +87,7 @@ public class UserWithoutPasswordDto {
      * @param gender the gender to set
      * @return User
      */
-    public UserWithoutPasswordDto setGender(Sexo gender) {
+    public UserWithoutPasswordDto setGender(String gender) {
         this.gender = gender;
         return this;
     }

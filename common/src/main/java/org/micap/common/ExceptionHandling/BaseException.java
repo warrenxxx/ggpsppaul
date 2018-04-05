@@ -1,20 +1,10 @@
 package org.micap.common.ExceptionHandling;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.ConnectionString;
-import com.mongodb.async.SingleResultCallback;
-import com.mongodb.async.client.MongoClient;
-import com.mongodb.async.client.MongoClients;
-import com.mongodb.async.client.MongoCollection;
-import com.mongodb.async.client.MongoDatabase;
-import org.bson.Document;
+import org.micap.common.CommonApplication;
 import org.micap.common.config.AppError;
-import org.micap.common.repository.ErrorDaoMongoImpl;
 import org.micap.common.utilies.AppProperties;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Map;
 
 /**
  * The BaseException class is implemment to
@@ -30,14 +20,15 @@ public class BaseException extends Throwable{
     public BaseException(AppError appError) {
         super(getErrorMessage(appError));
         this.appError=appError;
-        ErrorDaoMongoImpl.saveError(appError);
+
+        CommonApplication.ERROR_DAO.saveError(appError);
     }
     public BaseException(AppError appError,Object object) {
         super(getErrorMessage(appError));
         appError.setData(object);
         this.appError=appError;
 
-        ErrorDaoMongoImpl.saveError(appError);
+        CommonApplication.ERROR_DAO.saveError(appError);
     }
     private static String getErrorMessage(AppError appError){
 

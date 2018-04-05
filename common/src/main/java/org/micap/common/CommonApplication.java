@@ -1,18 +1,13 @@
 package org.micap.common;
 
-import org.micap.common.config.AppResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.micap.common.entity.Variable;
+import org.micap.common.repository.Error.ErrorDao;
+import org.micap.common.repository.Error.ErrorDaoMongoImpl;
 
-@SpringBootApplication
+import java.util.List;
+import java.util.Map;
+
 public class CommonApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(CommonApplication.class, args);
-
-	}
-
+	public static ErrorDao ERROR_DAO=new ErrorDaoMongoImpl();
+	public static Map<String,List<Variable> > VARIABLES;
 }

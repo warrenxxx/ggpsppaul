@@ -2,8 +2,7 @@ package org.micap.login_management.repository;
 
 import org.micap.common.entity.User;
 import org.micap.login_management.dto.LoginDto;
-import org.micap.login_management.dto.UserDto;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.micap.login_management.dto.UserLoginDto;
 import reactor.core.publisher.Mono;
 
 /**
@@ -16,6 +15,6 @@ import reactor.core.publisher.Mono;
 public interface LoginDao {
     public Mono<String> getFunctions(String id);
     public Mono<User> getUser(String userName);
-    public Mono<UserDto> getUserDto(LoginDto loginDto);
+    public Mono<UserLoginDto> getUserDto(LoginDto loginDto);
 
 }

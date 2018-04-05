@@ -3,7 +3,7 @@ package org.micap.login_management.service;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
 import org.micap.login_management.dto.LoginDto;
-import org.micap.login_management.dto.UserDto;
+import org.micap.login_management.dto.UserLoginDto;
 import org.micap.login_management.repository.LoginDaoMongoImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,14 +27,14 @@ public class LoginService {
      * Use MongoImp
      */
     @Autowired
-    LoginDaoMongoImp loginDaoImp;
+    LoginDaoMongoImp dao;
 
     public Mono<ServerResponse> login(ServerRequest serverRequest){
-        UserDto user=loginDaoImp
+        UserLoginDto user=dao
                 .getUserDto(
                         serverRequest.bodyToMono(LoginDto.class).block()
                 )
-                .defaultIfEmpty(new UserDto())
+                .defaultIfEmpty(new UserLoginDto())
                 .block();
 
         //MONO<USERDTO>
@@ -43,7 +43,7 @@ public class LoginService {
                 .filter(userDto -> userDto.get_id()!=null)
                 .map(
                         userDto->userDto.setToken(
-                                toJwt(userDto.get_id(), loginDaoImp.getFunctions(userDto.get_id()).block())
+                                toJwt(userDto.get_id(), dao.getFunctions(userDto.get_id()).block())
                             )
                 )
                 .flatMap(e->AppResponse.AppResponseOk(e))

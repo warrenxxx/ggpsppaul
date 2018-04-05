@@ -1,11 +1,10 @@
 package org.micap.login_management.repository;
 
 import org.bson.types.ObjectId;
-import org.micap.common.config.AppError;
 import org.micap.common.entity.User;
 import org.micap.login_management.dto.FunctionsDto;
 import org.micap.login_management.dto.LoginDto;
-import org.micap.login_management.dto.UserDto;
+import org.micap.login_management.dto.UserLoginDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -60,7 +59,7 @@ public class LoginDaoMongoImp implements LoginDao {
     }
 
     @Override
-    public Mono<UserDto> getUserDto(LoginDto loginDto) {
+    public Mono<UserLoginDto> getUserDto(LoginDto loginDto) {
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 match(
                         where("account.userName")
@@ -81,7 +80,7 @@ public class LoginDaoMongoImp implements LoginDao {
                         .first("functions").as("functions")
                         .push("roles").as("roles")
 
-        ),"user",UserDto.class).publishNext();
+        ),"user",UserLoginDto.class).publishNext();
     }
 
 
