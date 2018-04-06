@@ -5,6 +5,7 @@ import org.micap.common.entity.User;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Created by Warren Stehen Aroni Soto.
@@ -30,7 +31,18 @@ public class AllUserDto {
     private Object age;
     private String email;
     private String userName;
+    private Date birthDate;
 
+    /**
+     * Sets the birthDate.
+     *
+     * @param birthDate the birthDate to set
+     * @return AllUserDto
+     */
+    public AllUserDto setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+        return this;
+    }
 
     public AllUserDto(User user){
         this._id=user.get_id();

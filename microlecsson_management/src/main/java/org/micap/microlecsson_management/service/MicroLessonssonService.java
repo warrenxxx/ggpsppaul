@@ -1,11 +1,13 @@
 package org.micap.microlecsson_management.service;
 
 
+import org.bson.types.ObjectId;
 import org.micap.common.ExceptionHandling.DuplicateIdException;
 import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
 import org.micap.common.entity.MicroLesson;
+import org.micap.common.security.Jwt;
 import org.micap.microlecsson_management.repository.MicroLessonDao;
 import org.micap.microlecsson_management.repository.MicroLessonDaoImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,13 +43,16 @@ public class MicroLessonssonService {
                 .onErrorResume(e->AppResponse.AppResponseError(e));
     }
     public Mono<ServerResponse> createMicroLesson(ServerRequest serverRequest){
-        return serverRequest.bodyToMono(MicroLesson.class).flatMap(
-                microLesson->dao.existById(microLesson.get_id())
-                    .flatMap(
-                            existe->existe==true?
-                                    Mono.error(new DuplicateIdException(microLesson.get_id())):
-                                    ok().body(dao.CreateMicroLesson(microLesson),MicroLesson.class)
-                    )
+        return serverRequest.bodyToMono(MicroLesson.class)
+                .flatMap(
+                            microLesson->
+                                    Jwt.getIdOfJwtToken(serverRequest).flatMap(
+                                            jwt->ok().body(dao.CreateMicroLesson(
+                                                    microLesson
+                                                            .set_id(new ObjectId().toString())
+                                                            .setIdUser(jwt)
+                                            ),MicroLesson.class)
+                                    )
                 ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
 

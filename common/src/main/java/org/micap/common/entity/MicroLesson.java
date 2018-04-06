@@ -20,7 +20,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode
 
 public class MicroLesson{
-    @Id
     private String _id;
     private String titulo;
 
@@ -30,7 +29,8 @@ public class MicroLesson{
 
     private Long duration;
     private String descriptcion;
-    private String userId;
+    @Id
+    private String idUser;
 
 
     private String script;
@@ -105,13 +105,13 @@ public class MicroLesson{
     }
 
     /**
-     * Sets the userId.
+     * Sets the idUser.
      *
-     * @param userId the userId to set
+     * @param idUser the idUser to set
      * @return MicroLesson
      */
-    public MicroLesson setUserId(String userId) {
-        this.userId = userId;
+    public MicroLesson setIdUser(String idUser) {
+        this.idUser = idUser;
         return this;
     }
 

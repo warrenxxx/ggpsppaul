@@ -40,7 +40,6 @@ public class MicroLessonsController {
                         GET("/{id}")    , Req -> service.getMicroLesson(Req)
                 )
                         .filter((req,next)->verifyFunctions(req,next,AUTH+"-READ"))
-
         ).andNest(path(ROLE),
                 route(
                         PUT("/")        , Req -> service.modifyMicroLesson(Req)
