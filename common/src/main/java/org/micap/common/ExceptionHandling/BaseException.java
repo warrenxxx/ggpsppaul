@@ -3,7 +3,9 @@ package org.micap.common.ExceptionHandling;
 import org.micap.common.CommonApplication;
 import org.micap.common.config.AppError;
 import org.micap.common.utilies.AppProperties;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 /**
@@ -33,6 +35,7 @@ public class BaseException extends Throwable{
     private static String getErrorMessage(AppError appError){
 
         String properti= AppProperties.readProperties(appError.errorNameException);
+
         String []propertiesValue=properti.split("--");
 
         appError.setErrorCode(propertiesValue[0]);

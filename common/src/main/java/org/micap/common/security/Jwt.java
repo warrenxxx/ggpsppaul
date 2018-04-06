@@ -51,12 +51,19 @@ public class Jwt {
 
 
     public static Mono<ServerResponse> verifyFunctions(ServerRequest req, HandlerFunction<ServerResponse> next, String function) {
+        System.out.println(function);
             return Flux.just(req.headers().header("Authorization").toArray(new String[0]))
                     .limitRequest(1)
                     .map(e-> JWT.decode(e))
-                    .flatMap(e->e.getHeaderClaim(Function).asString().contains(function)?
-                                    next.handle(req):
-                                    Mono.error(new AuthorizationException("_id",e.getHeaderClaim("_id").asString())))
+                    .flatMap(
+                            e->
+                            {
+                                System.out.println(e.getHeaderClaim(Function).asString());
+ return                               e.getHeaderClaim(Function).asString().contains(function) ?
+                                        next.handle(req) :
+                                        Mono.error(new AuthorizationException("_id", e.getHeaderClaim("_id").asString()));
+                            }
+                    )
                     .publishNext()
                     .switchIfEmpty(Mono.error(new HeaderException("Authorization")))
                     .onErrorResume(e->AppResponse.AppResponseError(e))

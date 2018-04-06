@@ -15,7 +15,7 @@ public class Course {
     private String masterId;//userId
     private String _id;
     private String name;
-    public String MicroLessonId[];
+    private String MicroLessonId[];
 
     public Course setMasterId(String masterId) {
         this.masterId = masterId;

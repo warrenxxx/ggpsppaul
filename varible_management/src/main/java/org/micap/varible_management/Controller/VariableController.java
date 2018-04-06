@@ -27,17 +27,17 @@ public class VariableController {
                         ).andRoute(
                                 GET("/{id}")    , service::getVariable
                         )
-                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-GET"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-READ"))
                 ).andNest(path(RUTE),
                         route(
                                 PUT("/")        , service::updateVariable
                         )
-                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-PUT"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-UPDATE"))
                 ).andNest(path(RUTE),
                         route(
                                 POST("/")       , service::createVariable
                         )
-                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-PUT"))
+                                .filter((req,next)->verifyFunctions(req,next,ENTITY+"-CREATE"))
                 ).andNest(path(RUTE),
                         route(
                                 DELETE("/{id}") , service::deleteVariableById

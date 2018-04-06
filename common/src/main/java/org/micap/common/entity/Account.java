@@ -19,12 +19,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @Document
 public class Account {
-
     private String email;
     private String password;
     private String userName;
     private String roles[];
     private Function functions[];
+
 
     /**
      * Sets the email.
@@ -34,17 +34,6 @@ public class Account {
      */
     public Account setEmail(String email) {
         this.email = email;
-        return this;
-    }
-
-    /**
-     * Sets the password.
-     *
-     * @param password the password to set
-     * @return Account
-     */
-    public Account setPassword(String password) {
-        this.password = password;
         return this;
     }
 
@@ -60,6 +49,17 @@ public class Account {
     }
 
     /**
+     * Sets the password.
+     *
+     * @param password the password to set
+     * @return Account
+     */
+    public Account setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+        /**
      * Sets the roles.
      *
      * @param roles the roles to set

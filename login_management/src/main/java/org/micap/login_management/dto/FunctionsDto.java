@@ -1,3 +1,11 @@
+/**
+ * The FunctionsDto class is implemment to
+ *
+ * @version :1.0
+ * @Author :warren
+ * @since :5/04/2018
+ */
+
 package org.micap.login_management.dto;
 
 import lombok.*;

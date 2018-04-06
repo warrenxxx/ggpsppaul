@@ -34,12 +34,12 @@ public class UserController {
                 ).andRoute(
                         GET("/{id}")    , Req -> userService.getUser(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,auth+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,auth+"-READ"))
 
         ).andNest(path(RUTE),
                 route(
                         PUT("/")        , Req -> userService.modifyUser(Req)
-                ).filter((req,next)->verifyFunctions(req,next,auth+"-PUT"))
+                ).filter((req,next)->verifyFunctions(req,next,auth+"-UPDATE"))
         ).andNest(path(RUTE),
                 route(
                         POST("/")       , Req -> userService.createUser(Req)

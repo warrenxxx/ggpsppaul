@@ -3,7 +3,6 @@ package org.micap.user_management.service;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
-import org.micap.common.ExceptionHandling.DuplicateIdException;
 import org.micap.common.ExceptionHandling.DuplicateUserNameException;
 import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
@@ -37,29 +36,29 @@ public class UserService {
     private UserDaoMongoImp userDaoImp;
 
 
-    public Mono<ServerResponse> getUsers(ServerRequest serverRequest){
+    public Mono<ServerResponse> getUsers(ServerRequest serverRequest) {
         return userDaoImp.getUsers()
-                .collectList().flatMap(e->AppResponse.AppResponseOk(e))
-                .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
+                .collectList().flatMap(e -> AppResponse.AppResponseOk(e))
+                .onErrorResume(e -> AppResponse.AppResponseError(new SystemException(e)));
     }
 
-    public Mono<ServerResponse> getUser(ServerRequest serverRequest){
+    public Mono<ServerResponse> getUser(ServerRequest serverRequest) {
         return userDaoImp.getUser(serverRequest.pathVariable("id"))
-                .flatMap(e->AppResponse.AppResponseOk(e))
-                .switchIfEmpty(Mono.error(new UserNotFoundException("_id",serverRequest.pathVariable("id"))))
-                .onErrorResume(e->AppResponse.AppResponseError(e));
+                .flatMap(e -> AppResponse.AppResponseOk(e))
+                .switchIfEmpty(Mono.error(new UserNotFoundException("_id", serverRequest.pathVariable("id"))))
+                .onErrorResume(e -> AppResponse.AppResponseError(e));
     }
 
-    public Mono<ServerResponse> createUser(ServerRequest serverRequest){
+    public Mono<ServerResponse> createUser(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(UserDto.class).flatMap(
-                user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
+                user -> userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
                         .count()
                         .flatMap(
-                                size -> size>0?
-                                        Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())):
+                                size -> size > 0 ?
+                                        Mono.error(new DuplicateUserNameException(user.getAccount().getUserName())) :
                                         userDaoImp.createUser(
                                                 new User(
-                                                    new ObjectId().toString(),
+                                                        new ObjectId().toString(),
                                                         user.getFirstName(),
                                                         user.getLastName(),
                                                         user.getBirthDate(),
@@ -73,15 +72,15 @@ public class UserService {
                                                         ),
                                                         null
                                                 )
-                                                .newAudit()
-                                        ).flatMap(gg->AppResponse.AppResponseOk())
+                                                        .newAudit()
+                                        ).flatMap(gg -> AppResponse.AppResponseOk())
                         )
-        ).onErrorResume(e->AppResponse.AppResponseError(e));
+        ).onErrorResume(e -> AppResponse.AppResponseError(e));
     }
 
-    public Mono<ServerResponse> modifyUser(ServerRequest serverRequest){
+    public Mono<ServerResponse> modifyUser(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(User.class).flatMap(
-                user->userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
+                user -> userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
                         .count()
                         .flatMap(
                                 size -> size > 0 ?
@@ -101,12 +100,13 @@ public class UserService {
                                                         )
                                                 )
                         )
-        ).onErrorResume(e->AppResponse.AppResponseError(e));
+        ).onErrorResume(e -> AppResponse.AppResponseError(e));
     }
-    public Mono<ServerResponse> removeUser(ServerRequest serverRequest){
+
+    public Mono<ServerResponse> removeUser(ServerRequest serverRequest) {
         return userDaoImp.getUser(serverRequest.pathVariable("id"))
                 .flatMap(
-                        account->
+                        account ->
                                 ok().build(userDaoImp.deleteUser(serverRequest.pathVariable("id")))
                 )
                 .switchIfEmpty(notFound().build());

@@ -63,7 +63,7 @@ public class LoginDaoMongoImp implements LoginDao {
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 match(
                         where("account.userName")
-                            .is(loginDto.getUserName())
+                            .is(loginDto.getUser())
                         .and("account.password")
                             .is(loginDto.getPassword())
                 ),

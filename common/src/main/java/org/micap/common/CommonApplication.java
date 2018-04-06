@@ -10,4 +10,7 @@ import java.util.Map;
 public class CommonApplication {
 	public static ErrorDao ERROR_DAO=new ErrorDaoMongoImpl();
 	public static Map<String,List<Variable> > VARIABLES;
+	public static void main(String args[]){
+		System.out.println("ww");
+	}
 }

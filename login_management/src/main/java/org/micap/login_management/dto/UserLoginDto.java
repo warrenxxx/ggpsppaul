@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.micap.common.entity.Function;
 import org.micap.common.entity.Role;
-import org.micap.common.enums.Sexo;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -25,72 +24,18 @@ import java.time.LocalDate;
 @ToString
 @Document
 public class UserLoginDto {
+
     private String _id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private String gender;
-
     private String email;
     private String userName;
     private Role roles[];
     private Function functions[];
     private String token;
 
-    /**
-     * Sets the _id.
-     *
-     * @param _id the _id to set
-     * @return UserLoginDto
-     */
-    public UserLoginDto set_id(String _id) {
-        this._id = _id;
-        return this;
-    }
-
-    /**
-     * Sets the firstName.
-     *
-     * @param firstName the firstName to set
-     * @return UserLoginDto
-     */
-    public UserLoginDto setFirstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
-
-    /**
-     * Sets the lastName.
-     *
-     * @param lastName the lastName to set
-     * @return UserLoginDto
-     */
-    public UserLoginDto setLastName(String lastName) {
-        this.lastName = lastName;
-        return this;
-    }
-
-    /**
-     * Sets the birthDate.
-     *
-     * @param birthDate the birthDate to set
-     * @return UserLoginDto
-     */
-    public UserLoginDto setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-        return this;
-    }
-
-    /**
-     * Sets the gender.
-     *
-     * @param gender the gender to set
-     * @return UserLoginDto
-     */
-    public UserLoginDto setGender(Sexo gender) {
-        this.gender = gender;
-        return this;
-    }
 
     /**
      * Sets the email.

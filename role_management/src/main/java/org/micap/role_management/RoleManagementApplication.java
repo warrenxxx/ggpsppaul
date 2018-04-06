@@ -4,7 +4,6 @@ import org.bson.types.ObjectId;
 import org.micap.common.config.CorsConfiguration;
 import org.micap.common.entity.Function;
 import org.micap.common.entity.Role;
-import org.micap.common.enums.Methods;
 import org.micap.role_management.repository.RoleDaoImp;
 import org.micap.role_management.repository.RoleDaoMongo;
 import org.springframework.boot.CommandLineRunner;

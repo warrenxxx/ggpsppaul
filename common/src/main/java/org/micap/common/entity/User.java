@@ -12,19 +12,21 @@ import java.time.LocalDate;
  * @Author :warren
  * @since :17/03/2018
  */
+
+@Document
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
-@Document
-public class User {
+public class User{
     private String _id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private String gender;
+
     private Account account;
     private Audit audit;
+
 
 
     /**

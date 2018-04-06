@@ -1,6 +1,6 @@
 package org.micap.microlecsson_management.controller;
 
-import org.micap.role_management.service.RoleService;
+import org.micap.microlecsson_management.service.MicroLessonssonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
@@ -26,38 +26,36 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
  * @since :18/03/2018
  */
 @Controller
-public class RoleController {
-    private static final String ROLE="/role";
-    private static final String AUTH="ROLE";
+public class MicroLessonsController {
+    private static final String ROLE="/microLessons";
+    private static final String AUTH="MICROLESSON";
 
     @Bean
-    protected RouterFunction<ServerResponse> getRoutingFunction(RoleService roleService) {
+    protected RouterFunction<ServerResponse> getRoutingFunction(MicroLessonssonService service) {
         return
         nest(path(ROLE),
                 route(
-                        GET("/")        , Req -> roleService.getRoles(Req)
+                        GET("/")        , Req -> service.getMicroLessons(Req)
                 ).andRoute(
-                        GET("/{id}")    , Req -> roleService.getRole(Req)
+                        GET("/{id}")    , Req -> service.getMicroLesson(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-READ"))
 
         ).andNest(path(ROLE),
                 route(
-                        PUT("/")        , Req -> roleService.modifyRole(Req)
-                ).andRoute(
-                        DELETE("/{id}") , Req -> roleService.removerole(Req)
+                        PUT("/")        , Req -> service.modifyMicroLesson(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-UPDATE"))
         ).andNest(path(ROLE),
                 route(
-                        DELETE("/{id}") , Req -> roleService.removerole(Req)
+                        DELETE("/{id}") , Req -> service.removeMicroLesson(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-DELETE"))
         ).andNest(path(ROLE),
                 route(
-                        POST("/")       , Req -> roleService.createRole(Req)
+                        POST("/")       , Req -> service.createMicroLesson(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-CREATE"))
         );
     }
 }

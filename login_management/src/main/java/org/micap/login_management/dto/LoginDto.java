@@ -20,6 +20,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @Document
 public class LoginDto {
-    private String userName;
+    private String user;
     private String password;
 }
