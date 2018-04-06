@@ -51,11 +51,19 @@ public class UserDaoMongoImp implements UserDao {
     public Flux<AllUserDto> getUsers(){
         ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
-                Aggregation.project("_id","firstName","lastName","gender","birthDate")
+                Aggregation.project()
                         .and("account.roles").size().as("roleCount")
                         .and("account.email").as("email")
                         .and("account.userName").as("userName")
                         .and(updated).as("age")
+
+                        .and("_id").as("user._id")
+                        .and("firstName").as("user.firstName")
+                        .and("lastName").as("user.lastName")
+                        .and("gender").as("user.gender")
+                        .and("birthDate").as("user.birthDate")
+
+
         ),"user",AllUserDto.class).map(e->e.setAge( floor((Double) e.getAge()))
 
         );

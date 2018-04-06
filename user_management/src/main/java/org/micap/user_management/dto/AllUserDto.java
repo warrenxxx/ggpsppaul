@@ -1,6 +1,7 @@
 package org.micap.user_management.dto;
 
 import lombok.*;
+import org.micap.common.baseEntitys.BaseUser;
 import org.micap.common.entity.User;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -23,104 +24,67 @@ import java.util.Date;
 
 public class AllUserDto {
 
-    private String _id;
-    private String firstName;
-    private String lastName;
-    private String gender;
+
+
     private Long roleCount;
     private Object age;
     private String email;
     private String userName;
-    private Date birthDate;
+
+    private BaseUser user;
 
     /**
-     * Sets the birthDate.
+     * Sets the roleCount.
      *
-     * @param birthDate the birthDate to set
+     * @param roleCount the roleCount to set
      * @return AllUserDto
      */
-    public AllUserDto setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-        return this;
-    }
-
-    public AllUserDto(User user){
-        this._id=user.get_id();
-        this.firstName=user.getFirstName();
-        this.lastName=user.getFirstName();
-
-    }
-
     public AllUserDto setRoleCount(Long roleCount) {
         this.roleCount = roleCount;
         return this;
     }
 
+    /**
+     * Sets the age.
+     *
+     * @param age the age to set
+     * @return AllUserDto
+     */
     public AllUserDto setAge(Object age) {
         this.age = age;
         return this;
     }
 
+    /**
+     * Sets the email.
+     *
+     * @param email the email to set
+     * @return AllUserDto
+     */
     public AllUserDto setEmail(String email) {
         this.email = email;
         return this;
     }
 
+    /**
+     * Sets the userName.
+     *
+     * @param userName the userName to set
+     * @return AllUserDto
+     */
     public AllUserDto setUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    public AllUserDto setIdToString(){
-        this._id=this._id.toString();
-        return this;
-    }
-
     /**
-     * Sets the _id.
+     * Sets the user.
      *
-     * @param _id the _id to set
-     * @return UserDto
+     * @param user the user to set
+     * @return AllUserDto
      */
-    public AllUserDto set_id(String _id) {
-        this._id = _id;
+    public AllUserDto setUser(BaseUser user) {
+        this.user = user;
         return this;
     }
-
-    /**
-     * Sets the firstName.
-     *
-     * @param firstName the firstName to set
-     * @return UserDto
-     */
-    public AllUserDto setFirstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
-
-    /**
-     * Sets the lastName.
-     *
-     * @param lastName the lastName to set
-     * @return UserDto
-     */
-    public AllUserDto setLastName(String lastName) {
-        this.lastName = lastName;
-        return this;
-    }
-
-
-
-    /**
-     * Sets the gender.
-     *
-     * @param gender the gender to set
-     * @return UserDto
-     */
-    public AllUserDto setGender(String gender) {
-        this.gender = gender;
-        return this;
-    }
-
-
 }
