@@ -62,14 +62,9 @@ public class UserDaoMongoImp implements UserDao {
                         .and("lastName").as("user.lastName")
                         .and("gender").as("user.gender")
                         .and("birthDate").as("user.birthDate")
-
-
         ),"user",AllUserDto.class).map(e->e.setAge( floor((Double) e.getAge()))
-
         );
     }
-
-
 
     @Override
     public Flux<AccountDto> getUsersbyUsername(String userName){
@@ -136,6 +131,7 @@ public class UserDaoMongoImp implements UserDao {
     }
     @Override
     public Mono<UserWithoutPasswordDto> getUser(String id){
+
         ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
         return reactiveMongoOperations.aggregate(
                 Aggregation.newAggregation(

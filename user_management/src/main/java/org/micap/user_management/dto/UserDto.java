@@ -29,6 +29,7 @@ public class UserDto {
     private String gender;
     private AccountDto account;
     private Long roleCount;
+    private Long age;
 
     public UserDto(User user){
         this._id=user.get_id();

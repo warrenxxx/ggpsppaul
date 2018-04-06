@@ -1,6 +1,7 @@
 package org.micap.common.entity;
 
 import lombok.*;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -29,8 +30,8 @@ public class MicroLesson{
 
     private Long duration;
     private String descriptcion;
-    @Id
-    private String idUser;
+
+    private ObjectId idUser;
 
 
     private String script;
@@ -110,7 +111,7 @@ public class MicroLesson{
      * @param idUser the idUser to set
      * @return MicroLesson
      */
-    public MicroLesson setIdUser(String idUser) {
+    public MicroLesson setIdUser(ObjectId idUser) {
         this.idUser = idUser;
         return this;
     }

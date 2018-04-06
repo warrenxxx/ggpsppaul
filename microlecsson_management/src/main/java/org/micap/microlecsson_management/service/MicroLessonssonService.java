@@ -50,7 +50,7 @@ public class MicroLessonssonService {
                                             jwt->ok().body(dao.CreateMicroLesson(
                                                     microLesson
                                                             .set_id(new ObjectId().toString())
-                                                            .setIdUser(jwt)
+                                                            .setIdUser(new ObjectId(jwt))
                                             ),MicroLesson.class)
                                     )
                 ).onErrorResume(e->AppResponse.AppResponseError(e));
