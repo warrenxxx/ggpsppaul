@@ -37,6 +37,7 @@ public class UserService {
 
 
     public Mono<ServerResponse> getUsers(ServerRequest serverRequest) {
+        System.out.println("dd");
         return userDaoImp.getUsers()
                 .collectList().flatMap(e -> AppResponse.AppResponseOk(e))
                 .onErrorResume(e -> AppResponse.AppResponseError(new SystemException(e)));

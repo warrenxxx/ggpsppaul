@@ -22,7 +22,6 @@ import java.util.Map;
 import static org.springframework.web.reactive.function.server.ServerResponse.badRequest;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
-
 /**
  * The Jwt class is implemment to
  *
@@ -43,7 +42,6 @@ public class Jwt {
                             "_id", _id,
                             Function, functions
                     ))
-
                     .sign(Algorithm.HMAC256("SECRETO"));
         } catch (Exception exception) {
             return "";

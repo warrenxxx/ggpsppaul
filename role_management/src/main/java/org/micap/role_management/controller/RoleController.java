@@ -57,6 +57,11 @@ public class RoleController {
                         POST("/")       , Req -> roleService.createRole(Req)
                 )
                         .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+        ).andNest(path(ROLE),
+                route(
+                        GET("/entitis")       , Req -> roleService.getEntitis(Req)
+                )
+                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
         );
     }
 }

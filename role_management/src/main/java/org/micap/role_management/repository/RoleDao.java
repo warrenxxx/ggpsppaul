@@ -22,4 +22,5 @@ public interface RoleDao {
     public Mono<Void> DeleteRole(Role role);
     public Mono<Void> DeleteRoleById(String id);
     public Mono<Boolean> existById(String id);
+    public Flux<String> getEntitis();
 }

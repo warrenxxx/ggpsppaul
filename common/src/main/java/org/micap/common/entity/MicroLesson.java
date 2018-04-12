@@ -13,13 +13,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since :26/03/2018
  */
 
+
+
 @Document
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @ToString
 @EqualsAndHashCode
-
 public class MicroLesson{
     private String _id;
     private String titulo;
@@ -38,7 +39,7 @@ public class MicroLesson{
     private Audit audit;
 
     private String  idCursos[];
-
+    private Script []scripts;
     /**
      * Sets the _id.
      *
@@ -49,6 +50,8 @@ public class MicroLesson{
         this._id = _id;
         return this;
     }
+
+
 
     /**
      * Sets the titulo.
@@ -117,9 +120,9 @@ public class MicroLesson{
     }
 
     /**
-     * Sets the script.
+     * Sets the Script.
      *
-     * @param script the script to set
+     * @param script the Script to set
      * @return MicroLesson
      */
     public MicroLesson setScript(String script) {
@@ -147,5 +150,9 @@ public class MicroLesson{
     public MicroLesson setIdCursos(String[] idCursos) {
         this.idCursos = idCursos;
         return this;
+    }
+
+    public void setScripts(Script[] scripts) {
+        this.scripts = scripts;
     }
 }

@@ -1,5 +1,6 @@
 package org.micap.login_management.repository;
 
+import org.micap.common.entity.User;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
@@ -10,5 +11,5 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
  * @Author :warren
  * @since :18/03/2018
  */
-public interface LoginDaoMongo extends  ReactiveMongoRepository<SecurityProperties.User,String>{
+public interface LoginDaoMongo extends  ReactiveMongoRepository<User,String>{
 }

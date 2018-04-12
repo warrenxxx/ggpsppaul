@@ -1,4 +1,4 @@
-package org.micap.common;
+package org.micap.login_management;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,11 +7,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CommonApplicationTests {
+public class otro {
 
-	@Test
-	public void contextLoads() {
-		System.out.println("warren");
-	}
+        @Test
+        public void contextLoads() {
+            System.out.println("warren2");
+        }
 
 }

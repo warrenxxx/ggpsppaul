@@ -10,6 +10,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.web.ProjectingJackson2HttpMessageConverter;
 import org.springframework.data.web.XmlBeamHttpMessageConverter;
 import org.springframework.http.HttpHeaders;
@@ -20,7 +21,11 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
+@PropertySource("classpath:application-tst.properties ")
 @SpringBootTest
 public class LoginManagementApplicationTests {
-
+    @Test
+    public void contextLoads() {
+        System.out.println("warren1");
+    }
 }

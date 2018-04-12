@@ -63,6 +63,9 @@ public class RoleDaoImp implements RoleDao{
         return roleDaoMongo.existsById(id);
     }
 
-
+    @Override
+    public Flux<String> getEntitis() {
+        return reactiveMongoOperations.getCollectionNames();
+    }
 }
 

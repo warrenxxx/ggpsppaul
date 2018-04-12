@@ -30,7 +30,13 @@ public class RoleService {
         return roleDaoImp.getRoles()
                 .collectList()
                 .flatMap(e-> AppResponse.AppResponseOk(e))
-                    .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
+                .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
+    }
+    public Mono<ServerResponse> getEntitis(ServerRequest serverRequest){
+        return roleDaoImp.getEntitis()
+                .collectList()
+                .flatMap(e-> AppResponse.AppResponseOk(e))
+                .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
     }
 
     public Mono<ServerResponse> getRole(ServerRequest serverRequest){
@@ -65,4 +71,5 @@ public class RoleService {
                 )
                 .switchIfEmpty(notFound().build());
     }
+
 }
