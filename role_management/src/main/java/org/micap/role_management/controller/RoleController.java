@@ -39,29 +39,27 @@ public class RoleController {
                 ).andRoute(
                         GET("/{id}")    , Req -> roleService.getRole(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-READ"))
         ).andNest(path(ROLE),
                 route(
                         PUT("/")        , Req -> roleService.modifyRole(Req)
-                ).andRoute(
-                        DELETE("/{id}") , Req -> roleService.removerole(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-PUT"))
         ).andNest(path(ROLE),
                 route(
                         DELETE("/{id}") , Req -> roleService.removerole(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-DELETE"))
         ).andNest(path(ROLE),
                 route(
                         POST("/")       , Req -> roleService.createRole(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
-        ).andNest(path(ROLE),
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-POST"))
+        ).andNest(path("/entity"),
                 route(
-                        GET("/entitis")       , Req -> roleService.getEntitis(Req)
+                        GET("/")       , roleService::getEntitis
                 )
-                        .filter((req,next)->verifyFunctions(req,next,ROLE+"-GET"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-READ"))
         );
     }
 }

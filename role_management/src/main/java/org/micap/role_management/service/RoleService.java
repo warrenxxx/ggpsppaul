@@ -37,6 +37,16 @@ public class RoleService {
                 .collectList()
                 .flatMap(e-> AppResponse.AppResponseOk(e))
                 .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
+
+    }
+    public Mono<ServerResponse> getMrd(ServerRequest serverRequest){
+        System.out.println("wwwwww");
+        return ok().build();
+//        return roleDaoImp.getEntitis()
+//                .collectList()
+//                .flatMap(e-> AppResponse.AppResponseOk(e))
+//                .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
+
     }
 
     public Mono<ServerResponse> getRole(ServerRequest serverRequest){
