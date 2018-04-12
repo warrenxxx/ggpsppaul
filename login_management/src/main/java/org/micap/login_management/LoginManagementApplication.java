@@ -37,46 +37,10 @@ public class LoginManagementApplication {
     public static void main(final String[] args) {
         SpringApplication.run(LoginManagementApplication.class, args);
     }
-
     @Bean
-    CommandLineRunner commandLineRunner(){
-        return args -> {
-            ReactiveMongoOperations mongoOps = new ReactiveMongoTemplate(MongoClients.create("mongodb://localhost"), "REACTIVE1");
-            mongoOps.insert(new Person("Joe1", 34)).subscribe(System.out::print);
-
-            ReactiveMongoOperations mongoOps2 = new ReactiveMongoTemplate(MongoClients.create("mongodb://localhost"), "REACTIVE2");
-            mongoOps2.insert(new Person("JoeS1", 344)).subscribe(System.out::print);
-
-
-
-        };
-
-    }
-}
-
-class Person {
-
-    private String id;
-    private String name;
-    private int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public WebFilter corsFilter() {
+        return CorsConfiguration.corsFilter();
     }
 
-    public String getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public int getAge() {
-        return age;
-    }
 
-    @Override
-    public String toString() {
-        return "Person [id=" + id + ", name=" + name + ", age=" + age + "]";
-    }
 }
