@@ -16,6 +16,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
+
 import static org.micap.common.security.Jwt.getIdOfJwtToken;
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
@@ -80,6 +82,27 @@ public class UserService {
     }
 
     public Mono<ServerResponse> modifyUser(ServerRequest serverRequest) {
+
+        return serverRequest.bodyToMono(User.class)
+                .flatMap(
+                        UserRequest->userDaoImp.getFullUser(UserRequest.get_id())
+                                .flatMap(
+                                        UserFind->
+                                                        userDaoImp.updateUser(
+                                                                UserRequest
+                                                                        .setAccount(
+                                                                                UserRequest.getAccount().setPassword(UserFind.getAccount().getPassword())
+                                                                        ).setAudit(
+                                                                        UserFind.getAudit().setModifiedLocalDate(LocalDateTime.now())
+                                                                )
+                                                        ).flatMap(
+                                                                gg->AppResponse.AppResponseOk()
+                                                        )
+
+                                ).switchIfEmpty(
+                                        AppResponse.AppResponseError(new UserNotFoundException())
+                                ).onErrorResume(e->AppResponse.AppResponseError(e))
+                );/*
         return serverRequest.bodyToMono(User.class).flatMap(
                 user -> userDaoImp.getUsersbyUsername(user.getAccount().getUserName())
                         .count()
@@ -101,7 +124,7 @@ public class UserService {
                                                         )
                                                 )
                         )
-        ).onErrorResume(e -> AppResponse.AppResponseError(e));
+        ).onErrorResume(e -> AppResponse.AppResponseError(e));*/
     }
 
     public Mono<ServerResponse> removeUser(ServerRequest serverRequest) {

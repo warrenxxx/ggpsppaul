@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.server.WebFilter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @SpringBootApplication
@@ -27,7 +28,7 @@ public class UserManagementApplication {
     @Bean
     public CommandLineRunner commandLineRunner(UserDaoMongoImp userDaoMongo) {
         return args -> {
-
+            System.out.println(LocalDate.now().toString());
             new User();
         };
     }

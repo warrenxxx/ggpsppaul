@@ -173,4 +173,10 @@ public class UserDaoMongoImp implements UserDao {
                         .and("account.functions").as("account.functions")
         ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext();
     }
+
+    @Override
+    public Mono<User> getFullUser(String id) {
+        return userDaoMongo.findById(id);
+    }
+
 }

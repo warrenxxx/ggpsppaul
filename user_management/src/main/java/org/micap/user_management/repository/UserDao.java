@@ -19,6 +19,7 @@ import reactor.core.publisher.Mono;
 public interface UserDao {
     public Flux<AllUserDto> getUsers();
     public Mono<UserWithoutPasswordDto> getUser(String id);
+    public Mono<User> getFullUser(String id);
     public Flux<AccountDto> getUsersbyUsername(String userName);
     public Mono<User> getUser(String username, String password);
     public Flux<Function> getFunctions(String id);

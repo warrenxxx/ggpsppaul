@@ -34,7 +34,7 @@ public class RoleService {
     }
     public Mono<ServerResponse> getEntitis(ServerRequest serverRequest){
         return roleDaoImp.getEntitis()
-                .map(e->e.toUpperCase()A)
+                .map(e->e.toUpperCase())
                 .collectList()
                 .flatMap(e-> AppResponse.AppResponseOk(e))
                 .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
