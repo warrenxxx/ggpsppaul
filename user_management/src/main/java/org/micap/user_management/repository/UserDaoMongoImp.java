@@ -149,8 +149,52 @@ public class UserDaoMongoImp implements UserDao {
     }
     @Override
     public Mono<UserWithoutPasswordDto> getUser(String id){
-
         ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
+
+        reactiveMongoOperations.aggregate(
+                Aggregation.newAggregation(
+                        Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
+                        unwind("account.roles"),
+                        lookup("role","account.roles","_id","account.roles"),
+                        unwind("account.roles"),
+                        group( "_id")
+                                .first("firstName").as("firstName")
+                                .first("lastName").as("lastName")
+                                .first("birthDate").as("birthDate")
+                                .first("gender").as("gender")
+                                .first("account").as("account")
+                                .push("account.roles").as("roles"),
+
+                        project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
+                                .and(updated).as("age")
+                                .and("roles").as("account.roles")
+                                .and("account.email").as("account.email")
+                                .and("account.userName").as("account.userName")
+                                .and("account.functions").as("account.functions")
+                ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext().subscribe(System.out::print);
+
+        System.out.println(
+                Aggregation.newAggregation(
+                        Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
+                        unwind("account.roles"),
+                        lookup("role","account.roles","_id","account.roles"),
+                        unwind("account.roles"),
+                        group( "_id")
+                                .first("firstName").as("firstName")
+                                .first("lastName").as("lastName")
+                                .first("birthDate").as("birthDate")
+                                .first("gender").as("gender")
+                                .first("account").as("account")
+                                .push("account.roles").as("roles"),
+
+                        project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
+                                .and(updated).as("age")
+                                .and("roles").as("account.roles")
+                                .and("account.email").as("account.email")
+                                .and("account.userName").as("account.userName")
+                                .and("account.functions").as("account.functions")
+                ).toString()
+        );
         return reactiveMongoOperations.aggregate(
                 Aggregation.newAggregation(
                 Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),

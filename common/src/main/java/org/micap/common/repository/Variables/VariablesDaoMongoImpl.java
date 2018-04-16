@@ -16,11 +16,8 @@ import java.util.List;
 import java.util.Map;
 
 import static org.micap.common.CommonApplication.VARIABLES;
-import static org.micap.common.repository.configMongo.DATABASE;
-import static org.micap.common.repository.configMongo.OBJECT_MAPPER;
 
 public class VariablesDaoMongoImpl implements VariablesDao{
-    public static MongoCollection<Document> COLLECTION_VARIABLES = DATABASE.getCollection("variable");
 
 
     @Override

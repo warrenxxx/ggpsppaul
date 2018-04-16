@@ -1,17 +1,33 @@
 package org.micap.common.repository.Error;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.async.client.MongoClient;
-import com.mongodb.async.client.MongoClients;
-import com.mongodb.async.client.MongoCollection;
-import com.mongodb.async.client.MongoDatabase;
-import org.bson.Document;
+
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import com.mongodb.async.client.MongoClientSettings;
+import com.mongodb.connection.ClusterSettings;
+import com.mongodb.connection.ClusterType;
+import com.mongodb.connection.SslSettings;
+import com.mongodb.connection.netty.NettyStreamFactoryFactory;
+
+
+import com.mongodb.reactivestreams.client.MongoClient;
+import com.mongodb.reactivestreams.client.MongoClients;
+import io.netty.channel.nio.NioEventLoopGroup;
 import org.micap.common.config.AppError;
+import org.micap.common.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.mongo.MongoClientSettingsBuilderCustomizer;
+import org.springframework.boot.autoconfigure.mongo.MongoProperties;
+import org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory;
+import org.springframework.core.env.Environment;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.ReactiveMongoOperations;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
-import java.util.Map;
+import static java.util.Arrays.asList;
 
-import static org.micap.common.repository.configMongo.DATABASE;
-import static org.micap.common.repository.configMongo.OBJECT_MAPPER;
 
 /**
  * The ErrorDaoMongoImpl class is implemment to
@@ -21,14 +37,37 @@ import static org.micap.common.repository.configMongo.OBJECT_MAPPER;
  * @since :22/03/2018
  */
 public class ErrorDaoMongoImpl implements ErrorDao{
-    public static MongoCollection<Document> COLLECTION_ERROR = DATABASE.getCollection("errors");
+
+    @Autowired
+    Environment environment;
 
     public void saveError(AppError appError) {
-        Document document = new Document(OBJECT_MAPPER.convertValue(appError,Map.class)) ;
-        COLLECTION_ERROR.insertOne(document,(Void r,final Throwable t)->
-                System.out.println("error Inserted!!!")
-        );
-    }
+        MongoProperties mongoProperties=new MongoProperties();
 
+        mongoProperties.setUri("mongodb://hammer:micap123@cluster0-shard-00-00-x5n39.mongodb.net:27017,cluster0-shard-00-01-x5n39.mongodb.net:27017,cluster0-shard-00-02-x5n39.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin");
+        ReactiveMongoClientFactory RF=new ReactiveMongoClientFactory(mongoProperties,environment,asList());
+        MongoClientSettings ms=                MongoClientSettings.builder()
+                .sslSettings(SslSettings.builder()
+                        .applyConnectionString(new ConnectionString("mongodb+srv://hammer:micap123@cluster0-x5n39.mongodb.net/test&ssl=true"))
+                        .enabled(true)
+                        .build())
+                .streamFactoryFactory(NettyStreamFactoryFactory.builder()
+                        .eventLoopGroup(eventLoopGroup).build())
+                .build();
+
+        ReactiveMongoOperations OPS=new ReactiveMongoTemplate(RF.createMongoClient(ms),"test2");
+        OPS.insert(appError).subscribe(System.out::print);
+
+    }
+    private NioEventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+    public MongoClientSettingsBuilderCustomizer sslCustomizer() {
+        return clientSettingsBuilder -> clientSettingsBuilder
+                .sslSettings(SslSettings.builder()
+                        .enabled(true)
+                        .invalidHostNameAllowed(true)
+                        .build())
+                .streamFactoryFactory(NettyStreamFactoryFactory.builder()
+                        .eventLoopGroup(eventLoopGroup).build());
+    }
 
 }

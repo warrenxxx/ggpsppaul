@@ -8,14 +8,14 @@
 package org.micap.common.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.async.client.MongoClient;
-import com.mongodb.async.client.MongoClients;
-import com.mongodb.async.client.MongoCollection;
-import com.mongodb.async.client.MongoDatabase;
+
+import com.mongodb.reactivestreams.client.MongoClient;
+import com.mongodb.reactivestreams.client.MongoClients;
 import org.bson.Document;
+import org.springframework.data.mongodb.core.ReactiveMongoOperations;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 
 public class configMongo {
-    public static MongoClient MONGO_CLIENT = MongoClients.create();
-    public static MongoDatabase DATABASE = MONGO_CLIENT.getDatabase("micapDev");
-    public static ObjectMapper OBJECT_MAPPER=new ObjectMapper();
+    public static MongoClient MONGO_CLIENT_MICAP=MongoClients.create("mongodb://hammer:micap123@cluster0-shard-00-00-x5n39.mongodb.net:27017,cluster0-shard-00-01-x5n39.mongodb.net:27017,cluster0-shard-00-02-x5n39.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin");
+    public static ReactiveMongoOperations MONGO_OPS_MICAP = new ReactiveMongoTemplate(MONGO_CLIENT_MICAP, "micapDev");
 }

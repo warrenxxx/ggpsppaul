@@ -34,7 +34,7 @@ public class UserController {
                 ).andRoute(
                         GET("/{id}")    , Req -> userService.getUser(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,auth+"-READ"))
+      //                  .filter((req,next)->verifyFunctions(req,next,auth+"-READ"))
 
         ).andNest(path(RUTE),
                 route(
