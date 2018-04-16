@@ -1,10 +1,12 @@
 package org.micap.role_management.service;
 
 
+import org.bson.types.ObjectId;
 import org.micap.common.ExceptionHandling.DuplicateIdException;
 import org.micap.common.ExceptionHandling.SystemException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
 import org.micap.common.config.AppResponse;
+import org.micap.common.entity.Function;
 import org.micap.common.entity.Role;
 import org.micap.role_management.repository.RoleDao;
 import org.micap.role_management.repository.RoleDaoImp;
@@ -12,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
+
+import java.util.stream.Stream;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
@@ -49,7 +53,16 @@ public class RoleService {
                 .onErrorResume(e->AppResponse.AppResponseError(e));
     }
     public Mono<ServerResponse> createRole(ServerRequest serverRequest){
-        return serverRequest.bodyToMono(Role.class).flatMap(
+        return serverRequest.bodyToMono(Role.class)
+                .map(e->
+                        {
+                            for(Function f:e.getFunctions()){
+                                f._id=new ObjectId().toString();
+                            }
+                            return e;
+                        }
+                )
+                .flatMap(
                 role->roleDaoImp.existById(role.get_id())
                     .flatMap(
                             existe->existe==true?

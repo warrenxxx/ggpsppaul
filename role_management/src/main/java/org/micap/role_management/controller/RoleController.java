@@ -54,7 +54,7 @@ public class RoleController {
                 route(
                         POST("/")       , Req -> roleService.createRole(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-POST"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-CREATE"))
         ).andNest(path("/entity"),
                 route(
                         GET("/")       , roleService::getEntitis

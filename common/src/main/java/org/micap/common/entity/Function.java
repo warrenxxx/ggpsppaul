@@ -1,6 +1,7 @@
 package org.micap.common.entity;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
@@ -11,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode
 @Document
 public class Function {
+    @Id
     public String _id;
     public String entity;
     public String crudMethods[];

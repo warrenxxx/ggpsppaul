@@ -55,9 +55,12 @@ public class Jwt {
                 .limitRequest(1)
                 .map(e -> JWT.decode(e))
                 .flatMap(
-                        e -> e.getHeaderClaim(Function).asString().contains(function) ?
-                                next.handle(req) :
-                                Mono.error(new AuthorizationException("_id", e.getHeaderClaim("_id").asString()))
+                        e -> {
+                            System.out.println(e.getHeaderClaim(Function).asString());
+                            return e.getHeaderClaim(Function).asString().contains(function) ?
+                                    next.handle(req) :
+                                    Mono.error(new AuthorizationException("_id", e.getHeaderClaim("_id").asString()));
+                        }
 
                 )
                 .publishNext()
