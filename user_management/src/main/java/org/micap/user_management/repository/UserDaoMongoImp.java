@@ -50,23 +50,6 @@ public class UserDaoMongoImp implements UserDao {
     @Override
     public Flux<AllUserDto> getUsers(){
         ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
-
-        System.out.println(
-                Aggregation.newAggregation(
-                        Aggregation.project()
-                                .and("account.roles").size().as("roleCount")
-                                .and("account.email").as("email")
-                                .and("account.userName").as("userName")
-                                .and(updated).as("age")
-
-                                .and("_id").as("user._id")
-                                .and("firstName").as("user.firstName")
-                                .and("lastName").as("user.lastName")
-                                .and("gender").as("user.gender")
-                                .and("birthDate").as("user.birthDate")
-                ).toString()
-
-        );
         return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
                 Aggregation.project()
                         .and("account.roles").size().as("roleCount")
@@ -151,50 +134,45 @@ public class UserDaoMongoImp implements UserDao {
     public Mono<UserWithoutPasswordDto> getUser(String id){
         ArithmeticOperators.Divide updated = ArithmeticOperators.Divide.valueOf(aggregationOperationContext -> new Document("$subtract", Arrays.asList(new Date(), "$birthDate"))).divideBy(365 * 24*60*60*1000/0.04666);
 
-        reactiveMongoOperations.aggregate(
-                Aggregation.newAggregation(
-                        Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
-                        unwind("account.roles"),
-                        lookup("role","account.roles","_id","account.roles"),
-                        unwind("account.roles"),
-                        group( "_id")
-                                .first("firstName").as("firstName")
-                                .first("lastName").as("lastName")
-                                .first("birthDate").as("birthDate")
-                                .first("gender").as("gender")
-                                .first("account").as("account")
-                                .push("account.roles").as("roles"),
+        reactiveMongoOperations.getCollectionNames()
+                .collectList()
+                .flatMap(listVariables->reactiveMongoOperations.aggregate(
+                        Aggregation.newAggregation(
+                                Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
+                                unwind("account.roles"),
+                                lookup("role","account.roles","_id","account.roles"),
+                                unwind("account.roles"),
+                                group( "_id")
+                                        .first("firstName").as("firstName")
+                                        .first("lastName").as("lastName")
+                                        .first("birthDate").as("birthDate")
+                                        .first("gender").as("gender")
+                                        .first("account").as("account")
+                                        .push("account.roles").as("roles"),
 
-                        project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
-                                .and(updated).as("age")
-                                .and("roles").as("account.roles")
-                                .and("account.email").as("account.email")
-                                .and("account.userName").as("account.userName")
-                                .and("account.functions").as("account.functions")
-                ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext().subscribe(System.out::print);
+                                project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
+                                        .and(updated).as("age")
+                                        .and("roles").as("account.roles")
+                                        .and("account.email").as("account.email")
+                                        .and("account.userName").as("account.userName")
+                                        .and("account.functions").as("account.functions")
+                        ),"user",UserWithoutPasswordDto.class)
+                        .map(e->e.setAge( floor((Double) e.getAge())))
+                        .map(e->{
+                            listVariables.forEach(item->{
 
-        System.out.println(
-                Aggregation.newAggregation(
-                        Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
-                        unwind("account.roles"),
-                        lookup("role","account.roles","_id","account.roles"),
-                        unwind("account.roles"),
-                        group( "_id")
-                                .first("firstName").as("firstName")
-                                .first("lastName").as("lastName")
-                                .first("birthDate").as("birthDate")
-                                .first("gender").as("gender")
-                                .first("account").as("account")
-                                .push("account.roles").as("roles"),
+                                for(Function x:e.getAccount().getFunctions())
+                                    if(!listVariables.contains(x.get_id().toLowerCase())){
+                                        e.getAccount().
+                                    }
 
-                        project("_id","firstName","lastName","birthDate","gender","account.email","account.userName","account.functions")
-                                .and(updated).as("age")
-                                .and("roles").as("account.roles")
-                                .and("account.email").as("account.email")
-                                .and("account.userName").as("account.userName")
-                                .and("account.functions").as("account.functions")
-                ).toString()
-        );
+                            });
+                            return e;
+                        })
+                        .publishNext()
+                );
+
+
         return reactiveMongoOperations.aggregate(
                 Aggregation.newAggregation(
                 Aggregation.match(Criteria.where("_id").is(new ObjectId(id))),
@@ -215,7 +193,9 @@ public class UserDaoMongoImp implements UserDao {
                         .and("account.email").as("account.email")
                         .and("account.userName").as("account.userName")
                         .and("account.functions").as("account.functions")
-        ),"user",UserWithoutPasswordDto.class).map(e->e.setAge( floor((Double) e.getAge()))).publishNext();
+        ),"user",UserWithoutPasswordDto.class)
+                .map(e->e.setAge( floor((Double) e.getAge())))
+                .publishNext();
     }
 
     @Override

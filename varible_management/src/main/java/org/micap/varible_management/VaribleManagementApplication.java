@@ -13,7 +13,7 @@ public class VaribleManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VaribleManagementApplication.class, args);
 	}
-
+/*
 	@Bean
 	CommandLineRunner commandLineRunner(VariableDaoMongo variableDaoMongo){
 		return args -> {
@@ -43,5 +43,5 @@ public class VaribleManagementApplication {
 
 			});
 		};
-	}
+	}*/
 }

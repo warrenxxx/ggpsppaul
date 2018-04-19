@@ -56,12 +56,11 @@ public class Jwt {
                 .map(e -> JWT.decode(e))
                 .flatMap(
                         e -> {
-                            System.out.println(e.getHeaderClaim(Function).asString());
+                            System.out.println(e.getHeaderClaim(Function).asString().contains(function));
                             return e.getHeaderClaim(Function).asString().contains(function) ?
                                     next.handle(req) :
                                     Mono.error(new AuthorizationException("_id", e.getHeaderClaim("_id").asString()));
                         }
-
                 )
                 .publishNext()
                 .switchIfEmpty(Mono.error(new HeaderException("Authorization")))
@@ -77,7 +76,6 @@ public class Jwt {
                 .switchIfEmpty(Mono.error(new HeaderException("Authorization")))
                 .publishNext()
                 ;
-
     }
 
 }

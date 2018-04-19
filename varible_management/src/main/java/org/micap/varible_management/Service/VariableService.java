@@ -27,6 +27,7 @@ public class VariableService {
                 .onErrorResume(e->AppResponse.AppResponseError(new SystemException(e)));
     }
     public Mono<ServerResponse> getVariables(ServerRequest request){
+        System.out.println("sss");
         return variableDao
                 .getVariables()
                 .collectList()

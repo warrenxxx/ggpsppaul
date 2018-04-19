@@ -8,7 +8,6 @@ package org.micap.common.utilies;
  * @since :21/03/2018
  */
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -82,5 +81,9 @@ public class AppProperties {
             }
             return res;
         }
+    }
+    public static void main(String args[]){
+        System.out.println();
+        System.out.println(readProperties("gg"));
     }
 }
