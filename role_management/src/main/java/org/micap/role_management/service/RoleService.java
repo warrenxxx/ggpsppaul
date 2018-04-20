@@ -2,9 +2,7 @@ package org.micap.role_management.service;
 
 
 import org.bson.types.ObjectId;
-import org.micap.common.ExceptionHandling.DuplicateIdException;
-import org.micap.common.ExceptionHandling.SystemException;
-import org.micap.common.ExceptionHandling.UserNotFoundException;
+import org.micap.common.ExceptionHandling.*;
 import org.micap.common.config.AppResponse;
 import org.micap.common.entity.Function;
 import org.micap.common.entity.Role;
@@ -76,9 +74,13 @@ public class RoleService {
     public Mono<ServerResponse> removerole(ServerRequest serverRequest){
         return roleDaoImp.getRole(serverRequest.pathVariable("id"))
                 .flatMap(
-                        account->ok().build(roleDaoImp.DeleteRoleById(serverRequest.pathVariable("id")))
+                        role->roleDaoImp.DeleteRoleById(serverRequest.pathVariable("id")).flatMap(
+                                roleDelete->AppResponse.AppResponseOk()
+                        ).switchIfEmpty(Mono.error(new ObjetcNotFoundException()))
                 )
-                .switchIfEmpty(notFound().build());
+                .switchIfEmpty(Mono.error(new RequestException()))
+                .onErrorResume(e->AppResponse.AppResponseError(e));
+
     }
 
 }
