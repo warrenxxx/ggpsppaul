@@ -17,6 +17,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@ToString
 public class User{
     private String _id;
     private String firstName;
@@ -111,5 +112,40 @@ public class User{
     }
     public User updateAudit(String id){
         return this.setAudit(this.getAudit().update(id));
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int result = _id != null ? _id.hashCode() : 0;
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (birthDate != null ? birthDate.hashCode() : 0);
+        result = 31 * result + (gender != null ? gender.hashCode() : 0);
+        result = 31 * result + (account != null ? account.hashCode() : 0);
+        result = 31 * result + (audit != null ? audit.hashCode() : 0);
+        return result;
+    }
+    /*
+this Override is generate to intellij
+ */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        if (get_id() != null ? !get_id().equals(user.get_id()) : user.get_id() != null) return false;
+        if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) : user.getFirstName() != null)
+            return false;
+        if (getLastName() != null ? !getLastName().equals(user.getLastName()) : user.getLastName() != null)
+            return false;
+        if (getBirthDate() != null ? !getBirthDate().equals(user.getBirthDate()) : user.getBirthDate() != null)
+            return false;
+        if (getGender() != null ? !getGender().equals(user.getGender()) : user.getGender() != null) return false;
+        if (getAccount() != null ? !getAccount().equals(user.getAccount()) : user.getAccount() != null) return false;
+        return getAudit() != null ? getAudit().equals(user.getAudit()) : user.getAudit() == null;
     }
 }

@@ -1,9 +1,6 @@
 package org.micap.common.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -18,6 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @ToString
 @Document
+@EqualsAndHashCode
 public class Account {
     private String email;
     private String password;

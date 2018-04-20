@@ -53,15 +53,7 @@ public class LoginManagementApplication {
     private NioEventLoopGroup eventLoopGroup = new NioEventLoopGroup();
     @Autowired
     Environment environment;
-    @Bean
-    CommandLineRunner commandLineRunner(){
-        return  args -> {
 
-        };
-    }
-    private MongoClient createMongoClient(String uri) {
-        return new MongoClient(new MongoClientURI(uri));
-    }
 
 
 }

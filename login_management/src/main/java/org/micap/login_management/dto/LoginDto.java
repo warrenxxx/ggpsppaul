@@ -16,10 +16,30 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@ToString
-@Document
+
 public class LoginDto {
-    private String user;
-    private String password;
+    @Getter private String user;
+    @Getter private String password;
+
+    /**
+     * Sets the LoginDto.
+     *
+     * @param user the user to set
+     * @return LoginDto
+     */
+    public LoginDto setUser(String user) {
+        this.user = user;
+        return this;
+    }
+
+    /**
+     * Sets the LoginDto.
+     *
+     * @param password the password to set
+     * @return LoginDto
+     */
+    public LoginDto setPassword(String password) {
+        this.password = password;
+        return this;
+    }
 }

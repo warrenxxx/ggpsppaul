@@ -1,6 +1,8 @@
 package org.micap.login_management.service;
 
+import org.micap.common.ExceptionHandling.RequestException;
 import org.micap.common.ExceptionHandling.UserNotFoundException;
+import org.micap.common.ExceptionHandling.UserWithouhtFunctionsException;
 import org.micap.common.config.AppResponse;
 import org.micap.login_management.dto.LoginDto;
 import org.micap.login_management.dto.UserLoginDto;
@@ -30,24 +32,24 @@ public class LoginService {
     LoginDaoMongoImp dao;
 
     public Mono<ServerResponse> login(ServerRequest serverRequest){
-        UserLoginDto user=dao
-                .getUserDto(
-                        serverRequest.bodyToMono(LoginDto.class).block()
-                )
-                .defaultIfEmpty(new UserLoginDto())
-                .block();
+        return     serverRequest.bodyToMono(LoginDto.class)
+                .filter(e->e.getPassword()!=null&&e.getUser()!=null)
+                .flatMap(
+                        loginDto -> dao.getUserDto(loginDto)
+                                .flatMap(
+                                        userLoginDto -> dao.getFunctions(userLoginDto.get_id())
+                                                .flatMap(
+                                                        functions ->
+                                                                AppResponse.AppResponseOk(
+                                                                        userLoginDto.setToken(
+                                                                                toJwt(userLoginDto.get_id(), functions)
+                                                                        )
+                                                                )
+                                                ).switchIfEmpty(Mono.error(new UserWithouhtFunctionsException(userLoginDto.getUserName())))
+                                ).switchIfEmpty(Mono.error(new UserNotFoundException()))
 
-        //MONO<USERDTO>
-        //JUST SIRVE PARA STORE ITEM IN MONO OR FLUX
-        return Mono.just(user)
-                .filter(userDto -> userDto.get_id()!=null)
-                .map(
-                        userDto->userDto.setToken(
-                                toJwt(userDto.get_id(), dao.getFunctions(userDto.get_id()).block())
-                            )
                 )
-                .flatMap(e->AppResponse.AppResponseOk(e))
-                .switchIfEmpty(Mono.error(new UserNotFoundException()))
-                .onErrorResume(e->AppResponse.AppResponseError(e));
+                .switchIfEmpty(Mono.error(new RequestException()))
+                .onErrorResume(e -> AppResponse.AppResponseError(e));
     }
 }

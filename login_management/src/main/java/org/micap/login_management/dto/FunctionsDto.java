@@ -11,6 +11,8 @@ package org.micap.login_management.dto;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Arrays;
+
 /**
  * The FunctionsDto class is implemment to
  *
@@ -21,11 +23,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
-@Document
+@Data
 public class FunctionsDto {
     private String _id;
     private String []functions;
+
 }

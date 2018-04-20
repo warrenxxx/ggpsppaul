@@ -26,7 +26,7 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
  * @since :18/03/2018
  */
 @Service
-public class LoginDaoMongoImp implements LoginDao {
+public class    LoginDaoMongoImp implements LoginDao {
 
     @Autowired
     LoginDaoMongo loginDaoMongo;
@@ -41,22 +41,27 @@ public class LoginDaoMongoImp implements LoginDao {
                 unwind("roles"),
                 lookup("role","roles","_id","roles"),
                 unwind("roles"),
-                unwind("roles.functions"),
+                unwind("roles.functions",true),
                 group().first("functions").as("functions").push("roles.functions").as("roles"),
                 project().and("roles").concatArrays("functions").as("items"),
                 unwind("items"),
                 unwind("items.crudMethods"),
                 project().andExpression("concat(items.entity,'-',items.crudMethods)").as("item"),
                 group().push("item").as("functions")
-        ),"user",FunctionsDto.class).publishNext().map(e-> Stream.of(e.getFunctions()).collect(Collectors.joining(",")));
+        ),"user",FunctionsDto.class)
+                .publishNext()
+                .map(e-> Stream.of(e.getFunctions())
+                        .collect(Collectors.joining(",")))
+                .switchIfEmpty(Mono.just(""))
+                ;
     }
 
     @Override
     public Mono<User> getUser(String userName) {
-        reactiveMongoOperations.aggregate(Aggregation.newAggregation(
+        return reactiveMongoOperations.aggregate(Aggregation.newAggregation(
             match(where("account.userName").is(userName))
-        ),"user",User.class);
-        return null;
+        ),"user",User.class).publishNext();
+
     }
 
     @Override
@@ -78,7 +83,7 @@ public class LoginDaoMongoImp implements LoginDao {
                         .first("gender").as("gender")
                         .first("account.email").as("email")
                         .first("account.userName").as("userName")
-                        .first("functions").as("functions")
+                        .first("account.functions").as("functions")
                         .push("roles").as("roles")
 
         ),"user",UserLoginDto.class).publishNext();
