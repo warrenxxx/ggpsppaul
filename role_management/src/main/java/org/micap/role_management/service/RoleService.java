@@ -55,26 +55,18 @@ public class RoleService {
     }
     public Mono<ServerResponse> createRole(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Role.class)
-                .map(e->
-                        {
-                            for(Function f:e.getFunctions()){
-                                f._id=new ObjectId().toString();
-                            }
-                            return e;
-                        }
-                )
+                .map(e->e.set_id(new ObjectId().toString()))
                 .flatMap(
-                role->roleDaoImp.existById(role.get_id())
+                    role->roleDaoImp.existById(role.get_id())
                     .flatMap(
                             existe->existe==true?
                                     Mono.error(new DuplicateIdException(role.get_id())):
-                                    ok().body(roleDaoImp.CreateRole(role),Role.class)
+                                    AppResponse.AppResponseOk()
                     )
                 ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
 
     public Mono<ServerResponse> modifyRole(ServerRequest serverRequest){
-        System.out.println("sw");
         return serverRequest.bodyToMono(Role.class).flatMap(
                 role->roleDaoImp.UpdataRole(role).flatMap(
                         roleUpdate->AppResponse.AppResponseOk()
