@@ -32,10 +32,14 @@ public class LoginDaoMongoImpTest {
     @Before
     public void brefore(){
 
-        StepVerifier.create(userDao.deleteAll()).expectNextCount(0).verifyComplete();
+        StepVerifier.create(
+                userDao.deleteAll()
+        ).expectNextCount(0).verifyComplete();
+
         StepVerifier.create(
                 userDao.insert(USER_A)
         ).expectNextCount(1).verifyComplete();
+
         StepVerifier.create(
                 userDao.insert(USER_B)
         ).expectNextCount(1).verifyComplete();
@@ -43,7 +47,10 @@ public class LoginDaoMongoImpTest {
         StepVerifier.create(
                 userDao.insert(USER_C)
         ).expectNextCount(1).verifyComplete();
+
+
         StepVerifier.create(roleDao.deleteAll()).expectNextCount(0).verifyComplete();
+
         StepVerifier.create(
                 roleDao.insert(ROLE_A)
         ).expectNextCount(1).verifyComplete();
@@ -57,9 +64,11 @@ public class LoginDaoMongoImpTest {
         StepVerifier.create(
                 daoMongoImp.getFunctions(USER_A.get_id())
         ).expectNext(FUNCTION_USER_A).expectNextCount(0).verifyComplete();
+
         StepVerifier.create(
                 daoMongoImp.getFunctions(USER_B.get_id())
         ).expectNext(FUNCTIONS_USER_B).expectNextCount(0).verifyComplete();
+
         StepVerifier.create(
                 daoMongoImp.getFunctions(USER_C.get_id())
         ).expectNext(FUNCTIONS_USER_C).expectNextCount(0).verifyComplete();

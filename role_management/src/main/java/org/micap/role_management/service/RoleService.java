@@ -15,6 +15,7 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.stream.Stream;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
@@ -73,12 +74,12 @@ public class RoleService {
     }
 
     public Mono<ServerResponse> modifyRole(ServerRequest serverRequest){
+        System.out.println("sw");
         return serverRequest.bodyToMono(Role.class).flatMap(
-                role->roleDaoImp.existById(role.get_id())
-                        .flatMap(
-                                existe->existe==true?notFound().build(): ok().body(roleDaoImp.CreateRole(role),Role.class)
-                        )
-        );
+                role->roleDaoImp.UpdataRole(role).flatMap(
+                        roleUpdate->AppResponse.AppResponseOk()
+                )
+        ).onErrorResume(e->AppResponse.AppResponseError(e));
     }
     public Mono<ServerResponse> removerole(ServerRequest serverRequest){
         return roleDaoImp.getRole(serverRequest.pathVariable("id"))

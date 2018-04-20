@@ -67,7 +67,8 @@ public class ControllerTest {
     }
     @Test
     public void test1() {
-        EntityExchangeResult<AppResponseDto> result= webTestClient.post().uri("/login")
+        EntityExchangeResult<AppResponseDto> result=
+                webTestClient.post().uri("/login")
                 .body(Mono.just(new LoginDto("warrenxxx", "123456")), LoginDto.class)
                 .exchange()
                 .expectStatus().isOk()
@@ -79,30 +80,5 @@ public class ControllerTest {
         assertEquals((result.getResponseBody().data).setToken(null),USER_LOGIN_DTO_A);
 
 
-        LoginDto loginDto=new LoginDto("warrenxxx","123456");
-
-        System.out.println(
-                Aggregation.newAggregation(
-                        match(
-                                where("account.userName")
-                                        .is(loginDto.getUser())
-                                        .and("account.password")
-                                        .is(loginDto.getPassword())
-                        ),
-                        unwind("account.roles"),
-                        lookup("role","account.roles","_id","roles"),
-                        unwind("roles"),
-                        group("_id")
-                                .first("firstName").as("firstName")
-                                .first("lastName").as("lastName")
-                                .first("birthDate").as("birthDate")
-                                .first("gender").as("gender")
-                                .first("account.email").as("email")
-                                .first("account.userName").as("userName")
-                                .first("account.functions").as("functions")
-                                .push("roles").as("roles")
-
-                ).toString()
-        );
     }
 }

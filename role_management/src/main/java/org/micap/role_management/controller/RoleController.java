@@ -44,7 +44,7 @@ public class RoleController {
                 route(
                         PUT("/")        , Req -> roleService.modifyRole(Req)
                 )
-                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-PUT"))
+                        .filter((req,next)->verifyFunctions(req,next,AUTH+"-UPDATE"))
         ).andNest(path(ROLE),
                 route(
                         DELETE("/{id}") , Req -> roleService.removerole(Req)

@@ -53,7 +53,4 @@ public class LoginManagementApplication {
     private NioEventLoopGroup eventLoopGroup = new NioEventLoopGroup();
     @Autowired
     Environment environment;
-
-
-
 }
