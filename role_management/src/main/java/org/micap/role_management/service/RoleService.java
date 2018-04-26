@@ -80,7 +80,6 @@ public class RoleService {
                 )
                 .switchIfEmpty(Mono.error(new RequestException()))
                 .onErrorResume(e->AppResponse.AppResponseError(e));
-
     }
 
 }

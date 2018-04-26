@@ -113,7 +113,8 @@ public class VariablesToTest {
             "User role",
             new Function[]{
 
-            }
+            },
+            true
     );
 
     public static Role ROLE_B=new Role(
@@ -160,7 +161,8 @@ public class VariablesToTest {
                                     "DELETE"
                             }
                     ),
-            }
+            },
+            true
     );
 
     public static UserLoginDto USER_LOGIN_DTO_A=new UserLoginDto(

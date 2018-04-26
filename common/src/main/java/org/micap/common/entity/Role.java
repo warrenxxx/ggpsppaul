@@ -15,6 +15,30 @@ public class Role {
     public String description;
     public Function functions[];
 
+    public Boolean isActive;
+
+    /**
+     * Sets the Role.
+     *
+     * @param description the description to set
+     * @return Role
+     */
+    public Role setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * Sets the Role.
+     *
+     * @param active the active to set
+     * @return Role
+     */
+    public Role setActive(Boolean active) {
+        isActive = active;
+        return this;
+    }
+
     /**
      * Sets the _id.
      *

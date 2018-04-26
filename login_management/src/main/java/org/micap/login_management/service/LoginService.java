@@ -47,7 +47,6 @@ public class LoginService {
                                                                 )
                                                 ).switchIfEmpty(Mono.error(new UserWithouhtFunctionsException(userLoginDto.getUserName())))
                                 ).switchIfEmpty(Mono.error(new UserNotFoundException()))
-
                 )
                 .switchIfEmpty(Mono.error(new RequestException()))
                 .onErrorResume(e -> AppResponse.AppResponseError(e));
